@@ -30,12 +30,16 @@ public class ItemManager {
     public Item getItem(int index){
         return items[index];
     }
-    public Item getItem(String itemName){ //TODO: find a way to do this that works if more than one item has the same name
+    public Item[] searchItem(String itemName){ //TODO: find a way to do this that works if more than one item has the same name
+        Item[] searchResults = new Item[50];
+        int currentIndex = 0;
         //Loop through the items array comparing itemName to the current Item.getName()
         for(int i = 0; i<items.length; i++){
-            if(itemName.equalsIgnoreCase(items[i].getName())){
-                return items[i];
+            if(itemName.contains(items[i].getName())){
+                searchResults[currentIndex] = items[i];
+                currentIndex++;
             }
+            return searchResults;
         }
         return null;
     }
