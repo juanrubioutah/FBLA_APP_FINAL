@@ -10,26 +10,67 @@
         android:layout_width="368dp"
         android:layout_height="495dp"
         android:gravity="center_vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
 
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="189dp"
-            android:layout_height="200dp"
-            android:elevation="14dp"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/heart"
-            tools:layout_editor_absoluteX="144dp"
-            tools:layout_editor_absoluteY="281dp" />
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
+ =
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
 
-        <ImageButton
-            android:id="@+id/buyButton"
-            android:layout_width="189dp"
-            android:layout_height="200dp"
-            android:layout_weight="1"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/bag" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="154dp"
+                android:layout_height="154dp"
+                android:elevation="14dp"
+                android:scaleType="fitCenter"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="20dp"
+                app:srcCompat="@drawable/heart"
+                android:background="#ffddcc"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Donate"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_vertical">
+
+                <ImageButton
+                    android:id="@+id/buyButton"
+                    android:layout_width="154dp"
+                    android:layout_height="154dp"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    app:srcCompat="@drawable/bag"
+                    android:background="#ffddcc"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Buy"
+                    android:gravity="center_horizontal"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+
+
+
 
     </LinearLayout>
 
