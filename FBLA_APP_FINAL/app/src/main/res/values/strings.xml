@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FBLA_APP_FINAL</string>
+    <string name="title_activity_confirm_donation">ConfirmDonationActivity</string>
+</resources>
