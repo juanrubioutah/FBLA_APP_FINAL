@@ -10,11 +10,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
 public class ItemInformationActivity extends AppCompatActivity {
 
     ItemManager manager = MainActivity.getGlobalItemManager();
+    CartManager cartManager = MainActivity.getGlobalCartManager();
     Item myItem;
     int myIndex;
 
@@ -41,10 +43,11 @@ public class ItemInformationActivity extends AppCompatActivity {
         conditionTextView.setText(myItem.getCondition());
         descriptionTextView.setText(myItem.getDescription());
     }
-    public void purchase(View view){
-        Intent intent = new Intent(this, PurchaseActivity.class);
-        intent.putExtra("itemIndex", myIndex);
-        startActivity(intent);
+    public void addToCart(View view){
+        cartManager.addItem(myItem);
+        //Show a toast notification telling the user the item has been added to the cart
+        Toast toast = Toast.makeText(this, "Item Successfully Added To Cart", Toast.LENGTH_SHORT);
+        toast.show();
     }
     public void cancel(View view){
         Intent intent = new Intent(this, FeaturedItemsActivity.class);

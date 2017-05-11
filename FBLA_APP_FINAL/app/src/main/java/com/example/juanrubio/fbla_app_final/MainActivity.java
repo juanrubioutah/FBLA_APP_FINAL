@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     public ImageView splashScreenImageView;
     public static ItemManager mainItemManager = new ItemManager();
+    public static CartManager mainCartManager = new CartManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,5 +34,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public static ItemManager getGlobalItemManager(){
         return mainItemManager;
+    }
+    public static CartManager getGlobalCartManager(){
+        return mainCartManager;
     }
 }

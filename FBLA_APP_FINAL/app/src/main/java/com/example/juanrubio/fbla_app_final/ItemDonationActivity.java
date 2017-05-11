@@ -99,14 +99,14 @@ public class ItemDonationActivity extends AppCompatActivity { //TODO: add paddin
         String itemDescription;
         Bitmap itemImage;
         //Check that all of the fields are completed, then store the values
-        if(!(itemNameEditText.getText().toString().equals(""))){
+        if(!(itemNameEditText.getText()==null)){
             itemName = itemNameEditText.toString();
         }
         else{
             incompleteTextView.setVisibility(View.VISIBLE);
             return;
         }
-        if(!(itemPriceEditText.getText().toString().equals(""))){
+        if(!(itemPriceEditText.getText()==null)){
             String tempPrice = itemPriceEditText.getText().toString();
             try{
                 itemPrice = Integer.parseInt(tempPrice);
@@ -120,14 +120,14 @@ public class ItemDonationActivity extends AppCompatActivity { //TODO: add paddin
             incompleteTextView.setVisibility(View.VISIBLE);
             return;
         }
-        if(!(itemConditionEditText.getText().toString().equals(""))){
+        if(!(itemConditionEditText.getText()==null)){
             itemCondition = itemConditionEditText.getText().toString();
         }
         else{
             incompleteTextView.setVisibility(View.VISIBLE);
             return;
         }
-        if(!(itemDescriptionEditText.getText().toString().equals(""))){
+        if(!(itemDescriptionEditText.getText()==null)){
             itemDescription = itemDescriptionEditText.getText().toString();
         }
         else{
@@ -144,7 +144,7 @@ public class ItemDonationActivity extends AppCompatActivity { //TODO: add paddin
         //Create a new item using all of the above attributes.
         Item myItem = new Item(demo, itemName, itemPrice, itemDescription, itemCondition, itemImage);
         itemManager.addItem(myItem);
-        itemManager.saveItemsArray();
+        //itemManager.saveItemsArray();
         Intent intent = new Intent(this, ConfirmDonationActivity.class);
         startActivity(intent);
     }

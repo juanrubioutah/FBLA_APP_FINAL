@@ -13,10 +13,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
 
+import java.util.ArrayList;
+
 @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
 public class FeaturedItemsActivity extends AppCompatActivity {
 
-    Item[] items;
+    ArrayList<Item> items;
     Context context;
     GridLayout gridLayout;
 
@@ -32,15 +34,15 @@ public class FeaturedItemsActivity extends AppCompatActivity {
 
     }
     public void initGridView(){ //TODO: check if this works
-        int currentRow = 0;
-        int currentCol = 0;
-        for(int i = 0; i<items.length; i++){
+        int currentRow = 1;
+        int currentCol = 1;
+        for(int i = 1; i<items.size(); i++){
             final int index = i;
             Button button = new Button(context);
-            BitmapDrawable bd = new BitmapDrawable(context.getResources(), items[i].getImage());
+            BitmapDrawable bd = new BitmapDrawable(context.getResources(), items.get(i).getImage());
             button.setBackground(bd);
             if(currentRow>4){
-                currentRow = 0;
+                currentRow = 1;
                 currentCol++;
             }
             ActionBar.LayoutParams params = new ActionBar.LayoutParams(currentRow, currentCol);

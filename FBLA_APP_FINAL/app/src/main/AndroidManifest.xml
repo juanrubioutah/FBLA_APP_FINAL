@@ -30,7 +30,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".FeaturedItemsActivity" />
         <activity android:name=".SearchActivity" />
-        <activity android:name=".SearchResultsActivity"></activity>
+        <activity android:name=".SearchResultsActivity" />
+        <activity android:name=".CartActivity"></activity>
     </application>
 
 </manifest>

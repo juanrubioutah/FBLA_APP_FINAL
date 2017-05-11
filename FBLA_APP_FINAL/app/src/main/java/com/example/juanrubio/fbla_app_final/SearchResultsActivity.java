@@ -22,14 +22,16 @@ public class SearchResultsActivity extends AppCompatActivity {
 
     }
     //Creates linearLayouts and views systematically to display search result results
-    public void createSearchResults(Item[] results){
+    public void createSearchResults(Item[] results){ //TODO: check if this works
         for(int i = 0; i<results.length; i++){
-            LinearLayout layout = new LinearLayout(this);
-            layout.setOrientation(LinearLayout.HORIZONTAL);
-            ImageView imageView = new ImageView(this);
-            imageView.setImageBitmap(results[i].getImage());
-            TextView textView = new TextView(this);
-            textView.setText(results[i].getName());
+           if(!(results[i].getName().equals(""))) { //Make sure that results[i] is a valid item
+               LinearLayout layout = new LinearLayout(this);
+               layout.setOrientation(LinearLayout.HORIZONTAL);
+               ImageView imageView = new ImageView(this);
+               imageView.setImageBitmap(results[i].getImage());
+               TextView textView = new TextView(this);
+               textView.setText(results[i].getName());
+           }
         }
     }
 }

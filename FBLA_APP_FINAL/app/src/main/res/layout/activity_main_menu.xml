@@ -30,7 +30,8 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="20dp"
                 app:srcCompat="@drawable/heart"
-                android:background="#ffddcc"/>
+                android:background="#ffddcc"
+                android:onClick="donate"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -52,12 +53,14 @@
                     android:id="@+id/buyButton"
                     android:layout_width="154dp"
                     android:layout_height="154dp"
+                    android:elevation="14dp"
                     android:layout_weight="1"
                     android:scaleType="fitCenter"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="20dp"
                     app:srcCompat="@drawable/bag"
-                    android:background="#ffddcc"/>
+                    android:background="#ffddcc"
+                    android:onClick="buy"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
