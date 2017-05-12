@@ -12,6 +12,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -19,8 +22,8 @@ import java.util.ArrayList;
 public class FeaturedItemsActivity extends AppCompatActivity {
 
     ArrayList<Item> items;
+    LinearLayout linearLayout;
     Context context;
-    GridLayout gridLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,34 +32,36 @@ public class FeaturedItemsActivity extends AppCompatActivity {
         items = MainActivity.getGlobalItemManager().getAllItems();
 
         setContentView(R.layout.activity_featured_items);
-        gridLayout = (GridLayout)findViewById(R.id.featuredItemsGridView);
-        initGridView();
+        linearLayout = (LinearLayout)findViewById(R.id.featuredItemsLayout);
+        initLinearLayout();
 
     }
-    public void initGridView(){ //TODO: check if this works
-        int currentRow = 1;
-        int currentCol = 1;
-        for(int i = 1; i<items.size(); i++){
-            final int index = i;
-            Button button = new Button(context);
-            BitmapDrawable bd = new BitmapDrawable(context.getResources(), items.get(i).getImage());
-            button.setBackground(bd);
-            if(currentRow>4){
-                currentRow = 1;
-                currentCol++;
-            }
-            ActionBar.LayoutParams params = new ActionBar.LayoutParams(currentRow, currentCol);
-            button.setLayoutParams(params);
-            button.setOnClickListener(new View.OnClickListener() {
+    public void initLinearLayout(){ //TODO: check if this works
+       for(int i = 1; i<=items.size(); i++){
+           final int index = i;
+           LinearLayout itemLayout = new LinearLayout(this);
+           itemLayout.setOrientation(LinearLayout.HORIZONTAL);
 
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(context, ItemInformationActivity.class);
-                    intent.putExtra("itemIndex", index);
-                    startActivity(intent);
-                }
-            });
-            gridLayout.addView(button);
-        }
+           ImageView itemImage = new ImageView(this);
+
+           if(items.get(i).getImage()!=null){ //Assign the item's image to the image view if the item has one
+               itemImage.setImageBitmap(items.get(i).getImage());
+           }
+
+           TextView itemTitle = new TextView(this);
+           itemTitle.setText(items.get(i).getName());
+
+           itemLayout.addView(itemImage);
+           itemLayout.addView(itemTitle);
+
+           itemLayout.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   Intent intent = new Intent(context, ItemInformationActivity.class);
+                   intent.putExtra("itemIndex", index);
+                   startActivity(intent);
+               }
+           });
+       }
     }
 }

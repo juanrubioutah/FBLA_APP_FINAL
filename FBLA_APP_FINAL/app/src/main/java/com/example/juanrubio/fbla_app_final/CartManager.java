@@ -25,5 +25,8 @@ public class CartManager {
     public ArrayList<Item> getCart(){
         return cart;
     }
+    public void removeItem(int index){
+        cart.remove(index);
+    }
 
 }
