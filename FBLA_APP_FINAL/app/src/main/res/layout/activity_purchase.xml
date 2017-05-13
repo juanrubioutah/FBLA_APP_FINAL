@@ -17,49 +17,69 @@
             android:text="Please Complete All Fields"
             android:id="@+id/purchaseIncompleteTextView"
             android:visibility="invisible"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/purchaseTitle"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="50dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
-                android:text="Credit Card Number:"/>
+                android:text="Name:"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/purchaseCreditCardCVV"
+                android:hint="First                          Last"
+                android:gravity="bottom"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:text="Credit Card Num:"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/purchaseCreditCardNumber"
-                android:hint="Credit Card Number"/>
+                android:hint="Credit Card Number"
+                android:gravity="bottom"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="horizontal">
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp">
 
             <TextView
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
-                android:text="Expiration Date:"/>
+                android:text="Expiration Date:"
+                />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/purchaseCreditCardExpiration"
-                android:hint="Expiration Date"/>
+                android:hint="Expiration Date"
+                android:gravity="bottom"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="horizontal">
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp">
 
             <TextView
                 android:layout_width="50dp"
@@ -70,25 +90,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/purchaseCreditCardCVV"
-                android:hint="CVV"/>
+                android:hint="CVV"
+                android:gravity="bottom"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="50dp">
 
             <Button
                 android:layout_width="100dp"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:text="Cancel"
-                android:onClick="cancel"/>
+                android:onClick="cancel"
+                android:layout_marginLeft="150dp"
+                android:background="#ffddcc"/>
 
             <Button
                 android:layout_width="100dp"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:text="Purchase"
-                android:onClick="purchase"/>
+                android:onClick="purchase"
+                android:layout_marginLeft="10dp"
+                android:background="#ffddcc" />
         </LinearLayout>
 
     </LinearLayout>
