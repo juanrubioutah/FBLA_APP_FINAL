@@ -17,7 +17,6 @@ public class PurchaseActivity extends AppCompatActivity {
     int myIndex;
 
     TextView incompleteTextView = (TextView)findViewById(R.id.incompleteTextView);
-    TextView titleTextView = (TextView)findViewById(R.id.purchaseTitle);
 
     EditText creditCardNumberEditText = (EditText)findViewById(R.id.purchaseCreditCardNumber);
     EditText creditCardExpirationEditText = (EditText)findViewById(R.id.purchaseCreditCardExpiration);
@@ -36,8 +35,6 @@ public class PurchaseActivity extends AppCompatActivity {
         myIndex = intent.getIntExtra("itemIndex", 0);
 
         myItem = myItemManager.getItem(myIndex);
-
-        titleTextView.setText("Purchase: "+myItem.getName());
 
     }
     public void purchase(View view){
