@@ -36,32 +36,40 @@ public class FeaturedItemsActivity extends AppCompatActivity {
         initLinearLayout();
 
     }
-    public void initLinearLayout(){ //TODO: check if this works
-       for(int i = 1; i<=items.size(); i++){
-           final int index = i;
-           LinearLayout itemLayout = new LinearLayout(this);
-           itemLayout.setOrientation(LinearLayout.HORIZONTAL);
+    public void initLinearLayout() { //TODO: check if this works
+        if (items.size() > 0) {
+            for (int i = 1; i <= items.size(); i++) {
+                final int index = i-1;
+                LinearLayout itemLayout = new LinearLayout(this);
+                itemLayout.setOrientation(LinearLayout.HORIZONTAL);
 
-           ImageView itemImage = new ImageView(this);
+                ImageView itemImage = new ImageView(this);
 
-           if(items.get(i).getImage()!=null){ //Assign the item's image to the image view if the item has one
-               itemImage.setImageBitmap(items.get(i).getImage());
-           }
+                if (items.get(i).getImage() != null) { //Assign the item's image to the image view if the item has one
+                    itemImage.setImageBitmap(items.get(i).getImage());
+                }
 
-           TextView itemTitle = new TextView(this);
-           itemTitle.setText(items.get(i).getName());
+                TextView itemTitle = new TextView(this);
+                itemTitle.setText(items.get(i).getName());
 
-           itemLayout.addView(itemImage);
-           itemLayout.addView(itemTitle);
+                itemLayout.addView(itemImage);
+                itemLayout.addView(itemTitle);
 
-           itemLayout.setOnClickListener(new View.OnClickListener() {
-               @Override
-               public void onClick(View v) {
-                   Intent intent = new Intent(context, ItemInformationActivity.class);
-                   intent.putExtra("itemIndex", index);
-                   startActivity(intent);
-               }
-           });
-       }
+                itemLayout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(context, ItemInformationActivity.class);
+                        intent.putExtra("itemIndex", index);
+                        startActivity(intent);
+                    }
+                });
+            }
+        }
+        else{ //If there are no items in the array, display a text view telling the user there are currently no items available
+            TextView textView = new TextView(this);
+            textView.setText("There are currently no items\navailable to purchase");
+            linearLayout.setGravity(LinearLayout.TEXT_ALIGNMENT_GRAVITY);
+            linearLayout.addView(textView);
+        }
     }
 }

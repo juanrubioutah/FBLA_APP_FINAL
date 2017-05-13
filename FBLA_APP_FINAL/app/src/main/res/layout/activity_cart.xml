@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context="com.example.juanrubio.fbla_app_final.CartActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/cartLinearLayout">
+</LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
