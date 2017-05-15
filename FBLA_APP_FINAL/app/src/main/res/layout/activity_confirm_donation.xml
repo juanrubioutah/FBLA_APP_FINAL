@@ -6,28 +6,33 @@
     android:layout_height="match_parent"
     tools:context="com.example.juanrubio.fbla_app_final.ConfirmDonationActivity">
 
-    <android.support.design.widget.AppBarLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="#ffffff">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:layout_height="100dp"
+            android:layout_gravity="center_vertical"
+            android:text="Thank You for Your Donation!"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
-    </android.support.design.widget.AppBarLayout>
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="75dp"
 
-    <include layout="@layout/content_confirm_donation" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+            android:background="#ffddcc"
+            android:onClick="returnToMenu"
+            android:text="Return to Menu"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+    </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>
