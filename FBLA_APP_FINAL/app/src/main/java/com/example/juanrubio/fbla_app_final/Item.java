@@ -1,11 +1,14 @@
 package com.example.juanrubio.fbla_app_final;
 
 import android.graphics.Bitmap;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 
 /**
  * Created by Juan Rubio on 4/30/2017.
  */
 
+@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
 public class Item {
     public User myOwner;
     public String myName;

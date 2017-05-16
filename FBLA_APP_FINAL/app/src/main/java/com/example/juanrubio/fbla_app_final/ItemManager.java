@@ -2,6 +2,8 @@ package com.example.juanrubio.fbla_app_final;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -13,7 +15,7 @@ import java.util.ArrayList;
 /**
  * Created by Juan Rubio on 4/30/2017.
  */
-
+@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
 public class ItemManager {
     ArrayList<Item> items; //TODO: try switching to some kind of list for item management
     public ItemManager(){

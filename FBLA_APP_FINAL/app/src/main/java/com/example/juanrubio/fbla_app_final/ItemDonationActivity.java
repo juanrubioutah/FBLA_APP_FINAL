@@ -145,7 +145,8 @@ public class ItemDonationActivity extends AppCompatActivity { //TODO: add paddin
         Item myItem = new Item(demo, itemName, itemPrice, itemDescription, itemCondition, itemImage);
         itemManager.addItem(myItem);
         //itemManager.saveItemsArray();
-        Intent intent = new Intent(this, ConfirmDonationActivity.class);
+        Intent intent = new Intent(this, ItemInformationActivity.class);
+        intent.putExtra("itemIndex", itemManager.getAllItems().size()-1);
         startActivity(intent);
     }
     public void cancel(View view){

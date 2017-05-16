@@ -1,12 +1,14 @@
 package com.example.juanrubio.fbla_app_final;
 
 import android.content.Intent;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
+@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
 public class SearchResultsActivity extends AppCompatActivity {
 
     @Override

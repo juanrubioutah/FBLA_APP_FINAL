@@ -20,20 +20,25 @@ public class ItemInformationActivity extends AppCompatActivity {
     Item myItem;
     int myIndex;
 
-    TextView titleTextView = (TextView)findViewById(R.id.itemTitleTextView);
-    ImageView imageView = (ImageView)findViewById(R.id.itemImageImageView);
-    TextView priceTextView = (TextView)findViewById(R.id.itemPriceTextView);
-    TextView conditionTextView = (TextView)findViewById(R.id.itemConditionTextView);
-    TextView descriptionTextView = (TextView)findViewById(R.id.itemDescriptionTextView);
-
+    TextView titleTextView;
+    ImageView imageView;
+    TextView priceTextView;
+    TextView conditionTextView;
+    TextView descriptionTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
-        myIndex = intent.getIntExtra("itemIndex", 0);
+        Bundle bundle = intent.getExtras();
+        int myIndex = bundle.getInt("itemIndex");
         myItem = manager.getItem(myIndex);
         setContentView(R.layout.activity_item_information);
+        titleTextView = (TextView)findViewById(R.id.itemTitleTextView);
+        imageView = (ImageView)findViewById(R.id.itemImageImageView);
+        priceTextView = (TextView)findViewById(R.id.itemPriceTextView);
+        conditionTextView = (TextView)findViewById(R.id.itemConditionTextView);
+        descriptionTextView = (TextView)findViewById(R.id.itemDescriptionTextView);
         populate();
     }
     public void populate(){
