@@ -1,6 +1,5 @@
 package com.example.juanrubio.fbla_app_final;
 
-import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.io.Serializable;
 
 @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
 public class SearchActivity extends AppCompatActivity {

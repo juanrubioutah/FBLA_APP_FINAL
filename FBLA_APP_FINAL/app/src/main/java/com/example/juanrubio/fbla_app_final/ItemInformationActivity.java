@@ -30,8 +30,9 @@ public class ItemInformationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
-        int myIndex = bundle.getInt("itemIndex");
+        String s = getIntent().getStringExtra("ITEM_INDEX");
+        int index = Integer.parseInt(s);
+        myIndex = index;
         myItem = manager.getItem(myIndex);
         setContentView(R.layout.activity_item_information);
         titleTextView = (TextView)findViewById(R.id.itemTitleTextView);
@@ -42,11 +43,31 @@ public class ItemInformationActivity extends AppCompatActivity {
         populate();
     }
     public void populate(){
-        titleTextView.setText(myItem.getName());
-        imageView.setImageBitmap(myItem.getImage());
-        priceTextView.setText(myItem.getPrice());
-        conditionTextView.setText(myItem.getCondition());
-        descriptionTextView.setText(myItem.getDescription());
+        try {
+            titleTextView.setText(myItem.getName());
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        try {
+            imageView.setImageBitmap(myItem.getImage());
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        try {
+            priceTextView.setText(myItem.getPrice());
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        try {
+            conditionTextView.setText(myItem.getCondition());
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        try {
+            descriptionTextView.setText(myItem.getDescription());
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
     public void addToCart(View view){
         cartManager.addItem(myItem);

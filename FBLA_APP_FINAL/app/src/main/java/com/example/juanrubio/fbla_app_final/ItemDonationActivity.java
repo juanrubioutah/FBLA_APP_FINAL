@@ -76,7 +76,7 @@ public class ItemDonationActivity extends AppCompatActivity { //TODO: add paddin
     }
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
-        switch(resultCode){
+        switch(requestCode){
             case 0:
                 if(resultCode == RESULT_OK){
                     Uri selectedImage = data.getData();
@@ -90,7 +90,6 @@ public class ItemDonationActivity extends AppCompatActivity { //TODO: add paddin
                 }
                 break;
         }
-
     }
     public void donate(View view){
         String itemName;
@@ -144,9 +143,10 @@ public class ItemDonationActivity extends AppCompatActivity { //TODO: add paddin
         //Create a new item using all of the above attributes.
         Item myItem = new Item(demo, itemName, itemPrice, itemDescription, itemCondition, itemImage);
         itemManager.addItem(myItem);
-        //itemManager.saveItemsArray();
+        itemManager.saveItemsArray();
         Intent intent = new Intent(this, ItemInformationActivity.class);
-        intent.putExtra("itemIndex", itemManager.getAllItems().size()-1);
+        String index = Integer.toString(itemManager.getAllItems().size()-1);
+        intent.putExtra("ITEM_INDEX", index);
         startActivity(intent);
     }
     public void cancel(View view){

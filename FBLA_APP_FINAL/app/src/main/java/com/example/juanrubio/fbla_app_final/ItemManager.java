@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * Created by Juan Rubio on 4/30/2017.
  */
 @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-public class ItemManager {
+public class ItemManager{
     ArrayList<Item> items; //TODO: try switching to some kind of list for item management
     public ItemManager(){
         items = new ArrayList<>();
@@ -60,7 +60,7 @@ public class ItemManager {
 
     public boolean saveItemsArray(){ //Saves the items array to internal storage. Returns true if successful
         //Check if items contains at least one Item
-        if(items.get(1)!=null){
+        if(items.get(0)!=null){
             try{
                 FileOutputStream fileOut = new FileOutputStream("items.ser");
                 ObjectOutputStream out = new ObjectOutputStream(fileOut);
