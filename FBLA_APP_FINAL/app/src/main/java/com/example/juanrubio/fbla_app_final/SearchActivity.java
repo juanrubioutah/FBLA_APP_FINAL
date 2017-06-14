@@ -6,6 +6,9 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.io.Serializable;
 
@@ -16,6 +19,8 @@ public class SearchActivity extends AppCompatActivity {
 
     ItemManager itemManager = MainActivity.getGlobalItemManager();
 
+    Item[] results;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,11 +28,25 @@ public class SearchActivity extends AppCompatActivity {
     }
     public void search(){
         String query = searchBox.getText().toString();
-        Item[] results = itemManager.searchItem(query);
-        Intent intent = new Intent(this, SearchResultsActivity.class);
-        Bundle args = new Bundle();
-        args.putSerializable("ARRAY", (Serializable)results);
-        intent.putExtra("resultsArray", args);
-        startActivity(intent);
+        results = itemManager.searchItem(query);
+        if(results!=null){
+            displaySearchResults();
+        }else{
+            TextView textView = new TextView(this);
+            textView.setText("No Items Matched Search Query");
+        }
+    }
+    //displaySearchResults now appears in the search activity, under the search bar, instead of creating a new activity.
+    public void displaySearchResults(){
+        for(int i = 0; i<results.length; i++){
+            if(!(results[i].getName().equals(""))) { //Make sure that results[i] has a valid name
+                LinearLayout layout = new LinearLayout(this);
+                layout.setOrientation(LinearLayout.HORIZONTAL);
+                ImageView imageView = new ImageView(this);
+                imageView.setImageBitmap(results[i].getImage());
+                TextView textView = new TextView(this);
+                textView.setText(results[i].getName());
+            }
+        }
     }
 }

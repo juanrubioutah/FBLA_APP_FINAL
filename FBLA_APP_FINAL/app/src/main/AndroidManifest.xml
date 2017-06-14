@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -30,7 +29,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".FeaturedItemsActivity" />
         <activity android:name=".SearchActivity" />
-        <activity android:name=".SearchResultsActivity" />
         <activity android:name=".CartActivity"></activity>
     </application>
 
