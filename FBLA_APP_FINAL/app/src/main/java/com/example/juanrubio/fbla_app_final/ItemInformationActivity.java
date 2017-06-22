@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +27,8 @@ public class ItemInformationActivity extends AppCompatActivity {
     TextView conditionTextView;
     TextView descriptionTextView;
 
+    LinearLayout itemInformationLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +38,9 @@ public class ItemInformationActivity extends AppCompatActivity {
         myIndex = index;
         myItem = manager.getItem(myIndex);
         setContentView(R.layout.activity_item_information);
+
+        itemInformationLayout = (LinearLayout)findViewById(R.id.itemInformationLayout);
+
         titleTextView = (TextView)findViewById(R.id.itemTitleTextView);
         imageView = (ImageView)findViewById(R.id.itemImageImageView);
         priceTextView = (TextView)findViewById(R.id.itemPriceTextView);
@@ -68,6 +74,26 @@ public class ItemInformationActivity extends AppCompatActivity {
         }catch(Exception e){
             e.printStackTrace();
         }
+        refreshComments();
+    }
+    public void refreshComments(){
+        String[][] comments = myItem.getComments();
+        for(int i = 0; i<1000; i++){
+            if(comments[i][0]!=""){
+                TextView nameTextView = new TextView(this);
+                TextView commentTextView = new TextView(this);
+                nameTextView.setText(comments[i][0]);
+                commentTextView.setText(comments[i][1]);
+                LinearLayout linearLayout = new LinearLayout(this);
+                linearLayout.setOrientation(LinearLayout.HORIZONTAL);
+                linearLayout.addView(nameTextView);
+                linearLayout.addView(commentTextView);
+                itemInformationLayout.addView(linearLayout);
+            }
+            else{
+                return;
+            }
+        }
     }
     public void addToCart(View view){
         cartManager.addItem(myItem);
@@ -77,6 +103,11 @@ public class ItemInformationActivity extends AppCompatActivity {
     }
     public void cancel(View view){
         Intent intent = new Intent(this, FeaturedItemsActivity.class);
+        startActivity(intent);
+    }
+    public void comment(View view){
+        Intent intent = new Intent(this, CommentActivity.class);
+        intent.putExtra("ITEM_INDEX", myIndex);
         startActivity(intent);
     }
 }

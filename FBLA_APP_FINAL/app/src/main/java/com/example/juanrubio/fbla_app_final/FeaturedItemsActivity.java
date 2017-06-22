@@ -2,11 +2,8 @@ package com.example.juanrubio.fbla_app_final;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -39,7 +36,7 @@ public class FeaturedItemsActivity extends AppCompatActivity {
     public void initLinearLayout() { //TODO: check if this works
         if (items.size() > 0) {
             for (int i = 1; i <= items.size(); i++) {
-                final int index = i-1;
+                final int index = i;
                 LinearLayout itemLayout = new LinearLayout(this);
                 itemLayout.setOrientation(LinearLayout.HORIZONTAL);
 

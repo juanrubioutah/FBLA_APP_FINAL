@@ -16,6 +16,7 @@ public class Item {
     public String myDescription;
     public String myCondition;
     public Bitmap myImage;
+    public String[][] comments;
     public Item(User owner, String name, int price, String description, String condition, Bitmap image){
         myOwner = owner;
         myName = name;
@@ -23,6 +24,7 @@ public class Item {
         myDescription = description;
         myCondition = condition;
         myImage = image;
+        comments = new String[1000][1000];
     }
     public User getOwner(){
         return myOwner;
@@ -41,5 +43,18 @@ public class Item {
     }
     public Bitmap getImage(){
         return myImage;
+    }
+    public void addComment(String commenterName, String comment){
+        //find the first empty place in the array:
+        for(int i = 0; i<1000; i++){
+            if(comments[i][0].equals("")){
+                comments[i][0] = commenterName;
+                comments[i][1] = comment;
+                return;
+            }
+        }
+    }
+    public String[][] getComments(){
+        return comments;
     }
 }

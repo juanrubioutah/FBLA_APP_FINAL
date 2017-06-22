@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.juanrubio.fbla_app_final.CommentActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Please Complete All Fields"
+        android:visibility="invisible"
+        android:textColor="#FF0000"
+        android:id="@+id/commentCompleteTextView"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:hint="Your Name"
+        android:id="@+id/commentNameEditText"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:hint="Comment"
+        android:id="@+id/commentEditText"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:text="Cancel"
+            android:onClick="cancel"/>
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:text="Submit"
+            android:onClick="comment"/>
+    </LinearLayout>
+</LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

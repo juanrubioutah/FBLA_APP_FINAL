@@ -29,7 +29,8 @@
         <activity android:name=".FeaturedItemsActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".CartActivity" />
-        <activity android:name=".BuyOptionsActivity"></activity>
+        <activity android:name=".BuyOptionsActivity" />
+        <activity android:name=".CommentActivity"></activity>
     </application>
 
 </manifest>
