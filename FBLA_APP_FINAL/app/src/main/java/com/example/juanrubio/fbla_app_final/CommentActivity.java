@@ -15,15 +15,19 @@ public class CommentActivity extends AppCompatActivity {
     Item myItem;
     int itemIndex;
 
-    TextView commentCompleteTextView = (TextView)findViewById(R.id.commentCompleteTextView);
+    TextView commentCompleteTextView;
 
-    EditText commentNameEditText = (EditText)findViewById(R.id.commentNameEditText);
-    EditText commentEditText = (EditText)findViewById(R.id.commentEditText);
+    EditText commentNameEditText;
+    EditText commentEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comment);
+
+        commentCompleteTextView = (TextView)findViewById(R.id.commentCompleteTextView);
+        commentNameEditText = (EditText)findViewById(R.id.commentNameEditText);
+        commentEditText = (EditText)findViewById(R.id.commentEditText);
 
         itemIndex = getIntent().getIntExtra("ITEM_INDEX", itemIndex);
         myItem = itemManager.getItem(itemIndex);
@@ -32,8 +36,8 @@ public class CommentActivity extends AppCompatActivity {
 
     }
     public void comment(View view){
-        if(commentNameEditText.getText().toString()!=""){
-            if(commentEditText.getText().toString()!=""){
+        if(!(commentNameEditText.getText().toString().equals(""))){
+            if(!(commentEditText.getText().toString().equals(""))){
                 myItem.addComment(commentNameEditText.getText().toString(), commentEditText.getText().toString());
                 Intent intent = new Intent(this, ItemInformationActivity.class);
                 String s = Integer.toString(itemIndex);

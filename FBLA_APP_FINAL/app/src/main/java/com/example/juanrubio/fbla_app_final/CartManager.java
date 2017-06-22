@@ -20,7 +20,7 @@ public class CartManager {
                 return cart.get(i);
             }
         }
-        return new Item(null, null, -1, null, null, null); //Return a fake item
+        return new Item(null, null, "-1", null, null, null); //Return a fake item
     }
     public ArrayList<Item> getCart(){
         return cart;

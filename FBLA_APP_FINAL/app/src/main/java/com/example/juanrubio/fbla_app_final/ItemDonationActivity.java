@@ -141,7 +141,7 @@ public class ItemDonationActivity extends AppCompatActivity { //TODO: add paddin
             itemImage = null;
         }
         //Create a new item using all of the above attributes.
-        Item myItem = new Item(demo, itemName, itemPrice, itemDescription, itemCondition, itemImage);
+        Item myItem = new Item(demo, itemName, Integer.toString(itemPrice), itemDescription, itemCondition, itemImage);
         itemManager.addItem(myItem);
         itemManager.saveItemsArray();
         Intent intent = new Intent(this, ItemInformationActivity.class);

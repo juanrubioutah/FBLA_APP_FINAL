@@ -12,12 +12,12 @@ import android.support.annotation.RequiresApi;
 public class Item {
     public User myOwner;
     public String myName;
-    public int myPrice;
+    public String myPrice;
     public String myDescription;
     public String myCondition;
     public Bitmap myImage;
     public String[][] comments;
-    public Item(User owner, String name, int price, String description, String condition, Bitmap image){
+    public Item(User owner, String name, String price, String description, String condition, Bitmap image){
         myOwner = owner;
         myName = name;
         myPrice = price;
@@ -32,7 +32,7 @@ public class Item {
     public String getName(){
         return myName;
     }
-    public int getPrice(){
+    public String getPrice(){
         return myPrice;
     }
     public String getDescription(){
@@ -47,7 +47,7 @@ public class Item {
     public void addComment(String commenterName, String comment){
         //find the first empty place in the array:
         for(int i = 0; i<1000; i++){
-            if(comments[i][0].equals("")){
+            if(comments[i][0]==null){
                 comments[i][0] = commenterName;
                 comments[i][1] = comment;
                 return;

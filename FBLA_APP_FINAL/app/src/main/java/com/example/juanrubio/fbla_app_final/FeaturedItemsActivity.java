@@ -35,19 +35,25 @@ public class FeaturedItemsActivity extends AppCompatActivity {
     }
     public void initLinearLayout() { //TODO: check if this works
         if (items.size() > 0) {
-            for (int i = 1; i <= items.size(); i++) {
+            for (int i = 0; i < items.size(); i++) {
                 final int index = i;
                 LinearLayout itemLayout = new LinearLayout(this);
                 itemLayout.setOrientation(LinearLayout.HORIZONTAL);
 
                 ImageView itemImage = new ImageView(this);
 
-                if (items.get(i).getImage() != null) { //Assign the item's image to the image view if the item has one
+                try {
                     itemImage.setImageBitmap(items.get(i).getImage());
+                }catch(Exception e){
+                    e.printStackTrace();
                 }
 
                 TextView itemTitle = new TextView(this);
-                itemTitle.setText(items.get(i).getName());
+                try{
+                    itemTitle.setText(items.get(i).getName());
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
 
                 itemLayout.addView(itemImage);
                 itemLayout.addView(itemTitle);

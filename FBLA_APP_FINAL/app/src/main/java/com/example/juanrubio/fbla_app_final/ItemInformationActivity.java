@@ -32,7 +32,6 @@ public class ItemInformationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Intent intent = getIntent();
         String s = getIntent().getStringExtra("ITEM_INDEX");
         int index = Integer.parseInt(s);
         myIndex = index;
@@ -79,11 +78,13 @@ public class ItemInformationActivity extends AppCompatActivity {
     public void refreshComments(){
         String[][] comments = myItem.getComments();
         for(int i = 0; i<1000; i++){
-            if(comments[i][0]!=""){
+            if(comments[i][0]!=null){
                 TextView nameTextView = new TextView(this);
                 TextView commentTextView = new TextView(this);
-                nameTextView.setText(comments[i][0]);
+                nameTextView.setText(comments[i][0]+": ");
+                nameTextView.setTextSize(22);
                 commentTextView.setText(comments[i][1]);
+                commentTextView.setTextSize(18);
                 LinearLayout linearLayout = new LinearLayout(this);
                 linearLayout.setOrientation(LinearLayout.HORIZONTAL);
                 linearLayout.addView(nameTextView);
@@ -102,7 +103,7 @@ public class ItemInformationActivity extends AppCompatActivity {
         toast.show();
     }
     public void cancel(View view){
-        Intent intent = new Intent(this, FeaturedItemsActivity.class);
+        Intent intent = new Intent(this, MainMenuActivity.class);
         startActivity(intent);
     }
     public void comment(View view){
