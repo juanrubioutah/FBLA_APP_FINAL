@@ -33,7 +33,10 @@ public class CommentActivity extends AppCompatActivity {
         myItem = itemManager.getItem(itemIndex);
     }
     public void cancel(View view){
-
+        Intent intent = new Intent(this, ItemInformationActivity.class);
+        String s = Integer.toString(itemIndex);
+        intent.putExtra("ITEM_INDEX", s);
+        startActivity(intent);
     }
     public void comment(View view){
         if(!(commentNameEditText.getText().toString().equals(""))){
