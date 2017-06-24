@@ -5,6 +5,8 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorButton">#c0ffddcc</color>
     <color name="colorSmallButton">#73eefc</color>
-    <color name="colorTitleText">#424242</color>
-    <color name="colorTextHint">#BDBDBD</color>
+    <color name="colorTitleText">#de000000</color>
+    <color name="colorTextHint">#61000000</color>
+    <color name="colorText">#8a000000</color>
+
 </resources>
