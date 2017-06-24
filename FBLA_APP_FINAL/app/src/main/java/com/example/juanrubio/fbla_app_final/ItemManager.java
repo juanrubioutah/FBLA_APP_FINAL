@@ -81,7 +81,7 @@ public class ItemManager{
     public boolean readItemsArray(){ //Replaces the 'items' array with a copy saved in internal storage, if available. Returns true if successful
         try{
             FileInputStream fileIn = new FileInputStream("items.ser");
-            ObjectInputStream in = new ObjectInputStream(fileIn);
+             ObjectInputStream in = new ObjectInputStream(fileIn);
             items = (ArrayList<Item>)in.readObject();
             in.close();
             fileIn.close();
