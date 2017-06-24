@@ -8,7 +8,9 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:layout_editor_absoluteY="0dp"
+    tools:layout_editor_absoluteX="0dp">
 
     <TextView
         android:layout_width="match_parent"
@@ -17,17 +19,26 @@
         android:visibility="invisible"
         android:textColor="#FF0000"
         android:id="@+id/commentCompleteTextView"/>
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:hint="Your Name"
         android:id="@+id/commentNameEditText"/>
 
+    <RatingBar
+        android:id="@+id/ratingBar"
+        style="@style/Widget.AppCompat.RatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5" />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:hint="Comment"
-        android:id="@+id/commentEditText"/>
+        android:id="@+id/commentEditText"
+        android:orientation="vertical" />
 
     <LinearLayout
         android:layout_width="match_parent"
