@@ -35,7 +35,6 @@ public class ItemDonationActivity extends AppCompatActivity { //TODO: add paddin
     public Button chooseImageButton;
     public TextView incompleteTextView;
     public Bitmap image;
-    public User demo = new User("sampleEmail", "samplePassword"); //TODO: come up with a good user management system
     ItemManager itemManager = MainActivity.getGlobalItemManager();
 
     @Override
@@ -141,7 +140,7 @@ public class ItemDonationActivity extends AppCompatActivity { //TODO: add paddin
             itemImage = null;
         }
         //Create a new item using all of the above attributes.
-        Item myItem = new Item(demo, itemName, Integer.toString(itemPrice), itemDescription, itemCondition, itemImage);
+        Item myItem = new Item(itemName, Integer.toString(itemPrice), itemDescription, itemCondition, itemImage);
         itemManager.addItem(myItem);
         itemManager.saveItemsArray();
         Intent intent = new Intent(this, ItemInformationActivity.class);

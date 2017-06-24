@@ -10,24 +10,19 @@ import android.support.annotation.RequiresApi;
 
 @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
 public class Item {
-    public User myOwner;
     public String myName;
     public String myPrice;
     public String myDescription;
     public String myCondition;
     public Bitmap myImage;
     public String[][] comments;
-    public Item(User owner, String name, String price, String description, String condition, Bitmap image){
-        myOwner = owner;
+    public Item(String name, String price, String description, String condition, Bitmap image){
         myName = name;
         myPrice = price;
         myDescription = description;
         myCondition = condition;
         myImage = image;
         comments = new String[1000][1000];
-    }
-    public User getOwner(){
-        return myOwner;
     }
     public String getName(){
         return myName;

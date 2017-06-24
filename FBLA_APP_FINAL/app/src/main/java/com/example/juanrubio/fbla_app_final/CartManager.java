@@ -1,11 +1,14 @@
 package com.example.juanrubio.fbla_app_final;
 
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+
 import java.util.ArrayList;
 
 /**
  * Created by juanr on 5/11/2017.
  */
-
+@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
 public class CartManager {
     ArrayList<Item> cart = new ArrayList<>();
     public void addItem(Item item){
@@ -20,7 +23,7 @@ public class CartManager {
                 return cart.get(i);
             }
         }
-        return new Item(null, null, "-1", null, null, null); //Return a fake item
+        return new Item(null, null, "-1", null, null); //Return a fake item
     }
     public ArrayList<Item> getCart(){
         return cart;

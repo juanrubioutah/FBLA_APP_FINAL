@@ -16,6 +16,10 @@
         android:id="@+id/itemInformationLayout"
         android:layout_margin="10dp">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/itemTitleTextView" />
 
         <ImageView
             android:id="@+id/itemImageImageView"
