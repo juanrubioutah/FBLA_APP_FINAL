@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.juanrubio.fbla_app_final">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -33,7 +33,11 @@
         <activity android:name=".SearchActivity" />
         <activity android:name=".CartActivity" />
         <activity android:name=".BuyOptionsActivity" />
-        <activity android:name=".CommentActivity"></activity>
+        <activity android:name=".CommentActivity" />
+        <activity
+            android:name=".HomeScreenActivity"
+            android:label="@string/title_activity_home_screen"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

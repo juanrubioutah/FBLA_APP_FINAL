@@ -13,17 +13,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:id="@+id/itemInformationLayout">
+        android:id="@+id/itemInformationLayout"
+        android:layout_margin="10dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/itemTitleTextView"/>
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:id="@+id/itemImageImageView"/>
+            android:id="@+id/itemImageImageView"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/splashscreen"
+            android:scaleType="fitCenter" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,10 +36,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Price: "
-                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title" />
+                android:textSize="20sp"
+                android:textColor="@color/colorTitleText"
+                android:gravity="center_vertical"/>
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorTitleText"
                 android:id="@+id/itemPriceTextView"/>
         </LinearLayout>
 
@@ -49,27 +56,37 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:textColor="@color/colorTitleText"
                 android:text="Condition: "
-                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title" />
+                android:gravity="center_vertical"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorTitleText"
                 android:id="@+id/itemConditionTextView"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="50dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:textColor="@color/colorTitleText"
+                android:textSize="20sp"
                 android:text="Description: "
-                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title" />
+                android:gravity="center_vertical"/>
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorTitleText"
                 android:id="@+id/itemDescriptionTextView"/>
         </LinearLayout>
 
@@ -83,12 +100,18 @@
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:text="Cancel"
+                android:textColor="@color/colorTitleText"
+                android:background="@color/colorButton"
+                android:layout_margin="5dp"
                 android:onClick="cancel"/>
 
             <Button
                 android:layout_width="100dp"
+                android:layout_margin="5dp"
                 android:layout_height="match_parent"
                 android:text="Add to Cart"
+                android:textColor="@color/colorTitleText"
+                android:background="@color/colorButton"
                 android:onClick="addToCart"/>
         </LinearLayout>
 
@@ -96,14 +119,16 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="Comments"
+            android:textColor="@color/colorTitleText"
+            android:textSize="16sp"
             android:layout_gravity="center_horizontal"/>
 
         <Button
-            android:layout_width="100dp"
+            android:id="@+id/button"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="Add a Comment"
-            android:onClick = "comment"/>
-
+            android:onClick="comment"
+            android:text="Add a Comment" />
 
 
     </LinearLayout>

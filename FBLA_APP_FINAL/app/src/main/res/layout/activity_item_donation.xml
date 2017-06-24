@@ -30,7 +30,7 @@
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:text="Item Name:"
-                android:textColor="#424242"/>
+                android:textColor="@color/colorTitleText"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -48,7 +48,7 @@
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:text="Item Price:"
-                android:textColor="#424242"/>
+                android:textColor="@color/colorTitleText"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -66,7 +66,7 @@
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:text="Item Condition:"
-                android:textColor="#424242"/>
+                android:textColor="@color/colorTitleText"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -84,7 +84,7 @@
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:text="Item Description:"
-                android:textColor="#424242"/>
+                android:textColor="@color/colorTitleText"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -102,7 +102,7 @@
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:text="Choose Image:"
-                android:textColor="#424242"/>
+                android:textColor="@color/colorTitleText"/>
 
             <ImageView
                 android:layout_width="150dp"
@@ -116,7 +116,7 @@
                 android:layout_height="40dp"
                 android:layout_gravity="bottom"
                 android:layout_marginLeft="10dp"
-                android:background="#ffddcc"
+                android:background="@color/colorButton"
                 android:text="Choose Image"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -133,7 +133,7 @@
                 android:layout_height="50dp"
                 android:text="Cancel"
                 android:onClick="cancel"
-                android:background="#ffddcc"
+                android:background="@color/colorButton"
                 android:layout_marginLeft="150dp"/>
 
             <Button
@@ -141,7 +141,7 @@
                 android:layout_height="50dp"
                 android:text="Submit"
                 android:onClick="donate"
-                android:background="#ffddcc"
+                android:background="@color/colorButton"
                 android:layout_marginLeft="10dp"/>
 
         </LinearLayout>
