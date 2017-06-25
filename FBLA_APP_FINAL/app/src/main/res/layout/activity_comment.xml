@@ -10,8 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="0dp"
         android:padding="20dp">
 
         <TextView
@@ -65,7 +63,7 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
-                android:background="@color/colorSecondary"
+                android:background="@drawable/btncircle"
                 android:onClick="cancel"
                 android:text="Cancel"
                 android:textColor="@color/colorWhiteText" />
@@ -74,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:text="Submit"
                 android:textColor="@color/colorWhiteText"
-                android:background="@color/colorSecondary"
+                android:background="@drawable/btncircle"
                 android:onClick="comment"/>
         </LinearLayout>
 
