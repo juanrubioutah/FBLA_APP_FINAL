@@ -90,7 +90,7 @@ public class ItemInformationActivity extends AppCompatActivity {
                 largerLayout.setOrientation(LinearLayout.VERTICAL);
                 RatingBar ratingBar = new RatingBar(this);
                 ratingBar.setNumStars(Integer.valueOf(comments[i][2]));
-                ratingBar.setIsIndicator(true);
+                ratingBar.setIsIndicator(false);
                 ratingBar.setMax(Integer.valueOf(comments[i][2]));
                 largerLayout.addView(ratingBar);
                 LinearLayout linearLayout = new LinearLayout(this);

@@ -2,7 +2,9 @@ package com.example.juanrubio.fbla_app_final;
 
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Build;
+import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,20 +19,21 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        splashScreenImageView = (ImageView) findViewById(R.id.splashScreenImageView);
+
         //set the splash screen's image view to have the correct image
-        //TODO: FIXME: splashScreenImageView.setImageResource(R.drawable.IMAGE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
+        splashScreenImageView = (ImageView) findViewById(R.id.splashScreenImageView);
+        splashScreenImageView.setImageResource(R.drawable.splashscreen);
         mainItemManager.readItemsArray();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        setContentView(R.layout.activity_main);
-        Intent intent = new Intent(this, MainMenuActivity.class);
-        startActivity(intent);
+        int secondsDelayed = 2;
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+                Intent intent = new Intent(MainActivity.this, MainMenuActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        }, secondsDelayed * 1000);
     }
     public static ItemManager getGlobalItemManager(){
         return mainItemManager;
