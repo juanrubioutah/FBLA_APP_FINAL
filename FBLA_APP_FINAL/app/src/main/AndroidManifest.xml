@@ -23,7 +23,6 @@
         <activity android:name=".PurchaseActivity" />
         <activity android:name=".MainMenuActivity" />
         <activity android:name=".ItemDonationActivity" />
-
         <activity android:name=".PurchaseCompletedActivity" />
         <activity
             android:name=".ConfirmDonationActivity"
@@ -34,6 +33,11 @@
         <activity
             android:name=".HomeScreenActivity"
             android:label="@string/title_activity_home_screen"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".FeaturedItemsActivity"
+            android:label="@string/title_activity_featured_items"
             android:theme="@style/AppTheme"></activity>
     </application>
+
 </manifest>
