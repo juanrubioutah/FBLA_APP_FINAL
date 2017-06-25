@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
@@ -19,6 +20,7 @@ public class CommentActivity extends AppCompatActivity {
 
     EditText commentNameEditText;
     EditText commentEditText;
+    RatingBar starRatingBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class CommentActivity extends AppCompatActivity {
         commentCompleteTextView = (TextView)findViewById(R.id.commentCompleteTextView);
         commentNameEditText = (EditText)findViewById(R.id.commentNameEditText);
         commentEditText = (EditText)findViewById(R.id.commentEditText);
+        starRatingBar = (RatingBar)findViewById(R.id.ratingBar);
 
         itemIndex = getIntent().getIntExtra("ITEM_INDEX", itemIndex);
         myItem = itemManager.getItem(itemIndex);
@@ -41,7 +44,8 @@ public class CommentActivity extends AppCompatActivity {
     public void comment(View view){
         if(!(commentNameEditText.getText().toString().equals(""))){
             if(!(commentEditText.getText().toString().equals(""))){
-                myItem.addComment(commentNameEditText.getText().toString(), commentEditText.getText().toString());
+                int starNum = starRatingBar.getNumStars();
+                myItem.addComment(commentNameEditText.getText().toString(), commentEditText.getText().toString(), starNum);
                 Intent intent = new Intent(this, ItemInformationActivity.class);
                 String s = Integer.toString(itemIndex);
                 intent.putExtra("ITEM_INDEX", s);

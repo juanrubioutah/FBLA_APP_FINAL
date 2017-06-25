@@ -39,12 +39,13 @@ public class Item {
     public Bitmap getImage(){
         return myImage;
     }
-    public void addComment(String commenterName, String comment){
+    public void addComment(String commenterName, String comment, int numberOfStars){
         //find the first empty place in the array:
         for(int i = 0; i<1000; i++){
             if(comments[i][0]==null){
                 comments[i][0] = commenterName;
                 comments[i][1] = comment;
+                comments[i][2] = Integer.toString(numberOfStars);
                 return;
             }
         }

@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -85,11 +86,19 @@ public class ItemInformationActivity extends AppCompatActivity {
                 nameTextView.setTextSize(22);
                 commentTextView.setText(comments[i][1]);
                 commentTextView.setTextSize(18);
+                LinearLayout largerLayout = new LinearLayout(this);
+                largerLayout.setOrientation(LinearLayout.VERTICAL);
+                RatingBar ratingBar = new RatingBar(this);
+                ratingBar.setNumStars(Integer.valueOf(comments[i][2]));
+                ratingBar.setIsIndicator(true);
+                ratingBar.setMax(Integer.valueOf(comments[i][2]));
+                largerLayout.addView(ratingBar);
                 LinearLayout linearLayout = new LinearLayout(this);
                 linearLayout.setOrientation(LinearLayout.HORIZONTAL);
                 linearLayout.addView(nameTextView);
                 linearLayout.addView(commentTextView);
-                itemInformationLayout.addView(linearLayout);
+                largerLayout.addView(linearLayout);
+                itemInformationLayout.addView(largerLayout);
             }
             else{
                 return;
