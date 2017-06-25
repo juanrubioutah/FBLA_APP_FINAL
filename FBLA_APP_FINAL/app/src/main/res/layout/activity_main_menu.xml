@@ -65,7 +65,6 @@
                     android:gravity="center_horizontal"
                     android:text="Donate"
                     android:textColor="@color/colorWhiteText"
-                    android:background=""
                     android:textSize="30sp"
                     android:textStyle="bold" />
 

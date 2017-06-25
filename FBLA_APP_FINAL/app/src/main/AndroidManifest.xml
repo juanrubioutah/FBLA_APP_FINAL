@@ -19,25 +19,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AccountCreationActivity" />
         <activity android:name=".ItemInformationActivity" />
         <activity android:name=".PurchaseActivity" />
         <activity android:name=".MainMenuActivity" />
         <activity android:name=".ItemDonationActivity" />
+
         <activity android:name=".PurchaseCompletedActivity" />
         <activity
             android:name=".ConfirmDonationActivity"
             android:label="@string/title_activity_confirm_donation"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".FeaturedItemsActivity" />
-        <activity android:name=".SearchActivity" />
         <activity android:name=".CartActivity" />
-        <activity android:name=".BuyOptionsActivity" />
         <activity android:name=".CommentActivity" />
         <activity
             android:name=".HomeScreenActivity"
             android:label="@string/title_activity_home_screen"
             android:theme="@style/AppTheme"></activity>
     </application>
-
 </manifest>
