@@ -5,57 +5,80 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.juanrubio.fbla_app_final.CommentActivity">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:layout_editor_absoluteY="0dp"
-    tools:layout_editor_absoluteX="0dp">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="Please Complete All Fields"
-        android:visibility="invisible"
-        android:textColor="#FF0000"
-        android:id="@+id/commentCompleteTextView"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:hint="Your Name"
-        android:id="@+id/commentNameEditText"/>
-
-    <RatingBar
-        android:id="@+id/ratingBar"
-        style="@style/Widget.AppCompat.RatingBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:numStars="5" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:hint="Comment"
-        android:id="@+id/commentEditText"
-        android:orientation="vertical" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp"
+        android:padding="20dp">
 
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:text="Cancel"
-            android:onClick="cancel"/>
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:text="Submit"
-            android:onClick="comment"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Please Complete All Fields"
+            android:visibility="invisible"
+            android:textColor="#FF0000"
+            android:id="@+id/commentCompleteTextView"/>
+
+        <EditText
+            android:id="@+id/commentNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="20dp"
+            android:hint="Your Name"
+            android:gravity="bottom"
+            android:textSize="20sp"
+            android:textColor="@color/colorText"
+            android:inputType="textPersonName" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5" />
+
+        <EditText
+            android:id="@+id/commentEditText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="top"
+            android:layout_marginTop="20dp"
+            android:layout_weight="2"
+            android:textColor="@color/colorText"
+            android:textSize="18sp"
+            android:hint="Comment"
+
+            android:inputType="textMultiLine" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:background="@color/colorSecondary"
+                android:onClick="cancel"
+                android:text="Cancel"
+                android:textColor="@color/colorWhiteText" />
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:textColor="@color/colorWhiteText"
+                android:background="@color/colorSecondary"
+                android:onClick="comment"/>
+        </LinearLayout>
+
     </LinearLayout>
-</LinearLayout>
+
 
 </android.support.constraint.ConstraintLayout>

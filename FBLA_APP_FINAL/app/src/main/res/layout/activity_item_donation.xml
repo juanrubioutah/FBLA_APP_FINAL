@@ -8,7 +8,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp"
+        android:padding="20dp"
+        android:background="@color/colorBackGround">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="25dp">
@@ -49,11 +54,13 @@
                 android:layout_height="match_parent"
                 android:text="Item Price:"
                 android:textColor="@color/colorTitleText"/>
+
             <EditText
+                android:id="@+id/ItemPriceEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="Item Price"
-                android:id="@+id/ItemPriceEditText"/>
+                android:hint="$$"
+                android:inputType="number" />
         </LinearLayout>
 
         <LinearLayout
@@ -70,7 +77,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="Item Condition"
+                android:hint="New/Good/Old"
                 android:id="@+id/ItemConditionEditText"/>
         </LinearLayout>
 
@@ -98,11 +105,15 @@
             android:orientation="horizontal"
             android:layout_marginTop="20dp">
 
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:text="Choose Image:"
-                android:textColor="@color/colorTitleText"/>
+            <Button
+                android:id="@+id/ChooseImageButton"
+                android:layout_width="75dp"
+                android:layout_height="45dp"
+                android:layout_gravity="top"
+                android:background="@drawable/btncircle"
+                android:text="Choose Image"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/colorWhiteText" />
 
             <ImageView
                 android:layout_width="150dp"
@@ -110,39 +121,31 @@
                 android:layout_marginLeft="20dp"
                 android:id="@+id/DonationImageView"/>
 
-            <Button
-                android:id="@+id/ChooseImageButton"
-                android:layout_width="75dp"
-                android:layout_height="40dp"
-                android:layout_gravity="bottom"
-                android:layout_marginLeft="10dp"
-                android:background="@color/colorButton"
-                android:text="Choose Image"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:gravity="end">
             <Button
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:text="Cancel"
+                android:textColor="@color/colorWhiteText"
                 android:onClick="cancel"
-                android:background="@color/colorButton"
-                android:layout_marginLeft="150dp"/>
+                android:background="@drawable/btncircle"
+                android:layout_margin="5dp"/>
 
             <Button
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:text="Submit"
+                android:textColor="@color/colorWhiteText"
                 android:onClick="donate"
-                android:background="@color/colorButton"
-                android:layout_marginLeft="10dp"/>
+                android:background="@drawable/btncircle"
+                android:layout_margin="5dp"/>
 
         </LinearLayout>
     </LinearLayout>
