@@ -27,12 +27,11 @@ public class MainMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_menu);
     }
     public void buy(View view){
-        Intent intent = new Intent(this, HomeScreenActivity.class);
+        Intent intent = new Intent(this, FeaturedItemsActivity.class);
         startActivity(intent);
     }
     public void donate(View view){
         Intent intent = new Intent(this, ItemDonationActivity.class);
         startActivity(intent);
     }
-
 }
