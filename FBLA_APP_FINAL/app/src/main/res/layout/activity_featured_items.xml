@@ -14,6 +14,8 @@
         android:layout_height="match_parent" />
 
 
+
+
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
@@ -33,10 +35,9 @@
 
             <ListView
                 android:id="@+id/cartListView"
-                android:layout_below="@+id/spacer"
-                android:layout_width="240dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="start">
+                android:layout_below="@+id/spacer">
 
             </ListView>
 
