@@ -2,6 +2,7 @@ package com.example.juanrubio.fbla_app_final;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
