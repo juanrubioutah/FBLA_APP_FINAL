@@ -26,20 +26,40 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:id="@+id/cartLayout">
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
                 android:id="@+id/spacer"/>
 
-            <ListView
-                android:id="@+id/cartListView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@+id/spacer">
+                <ListView
+                    android:id="@+id/cartListView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/spacer">
 
-            </ListView>
+                </ListView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Clear Cart"
+                        android:onClick="clear"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Complete Purchase"
+                        android:onClick="completePurchase"/>
+                </LinearLayout>
 
         </RelativeLayout>
 

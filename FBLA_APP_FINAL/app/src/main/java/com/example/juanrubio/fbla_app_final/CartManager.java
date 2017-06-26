@@ -48,5 +48,9 @@ public class CartManager {
         }
         return index;
     }
+    public void clearAllItems(){
+        ArrayList<Item> newCart = new ArrayList<Item>();
+        cart = newCart;
+    }
 
 }

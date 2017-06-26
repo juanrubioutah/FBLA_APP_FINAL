@@ -16,11 +16,11 @@ public class PurchaseActivity extends AppCompatActivity {
     Item myItem;
     int myIndex;
 
-    TextView incompleteTextView = (TextView)findViewById(R.id.incompleteTextView);
+    TextView incompleteTextView;
 
-    EditText creditCardNumberEditText = (EditText)findViewById(R.id.purchaseCreditCardNumber);
-    EditText creditCardExpirationEditText = (EditText)findViewById(R.id.purchaseCreditCardExpiration);
-    EditText creditCardCVVEditText = (EditText)findViewById(R.id.purchaseCreditCardCVV);
+    EditText creditCardNumberEditText;
+    EditText creditCardExpirationEditText;
+    EditText creditCardCVVEditText;
 
     int creditCardNumber;
     String creditCardExpiration;
@@ -30,6 +30,11 @@ public class PurchaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchase);
+
+        incompleteTextView = (TextView)findViewById(R.id.incompleteTextView);
+        creditCardNumberEditText = (EditText)findViewById(R.id.purchaseCreditCardNumber);
+        creditCardExpirationEditText = (EditText)findViewById(R.id.purchaseCreditCardExpiration);
+        creditCardCVVEditText = (EditText)findViewById(R.id.purchaseCreditCardCVV);
 
         Intent intent = getIntent();
         myIndex = intent.getIntExtra("itemIndex", 0);
