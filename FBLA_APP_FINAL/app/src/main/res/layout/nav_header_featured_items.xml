@@ -16,7 +16,7 @@
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:paddingTop="10dp"
+        android:paddingTop="15dp"
         app:srcCompat="@drawable/shop" />
 
     <TextView
