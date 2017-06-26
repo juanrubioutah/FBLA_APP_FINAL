@@ -28,13 +28,23 @@ public class ItemManager{
     public Item getItem(int index){
         return items.get(index);
     }
+    public int getIndex(String itemName){
+        int index = -1;
+        for(int i = 0; i<items.size(); i++){
+            if(items.get(i).getName().equals(itemName)){
+                index = i;
+                return index;
+            }
+        }
+        return index;
+    }
     //Searches the items ArrayList and returns an array of Items that match the String itemName
     public Item[] searchItem(String itemName){ //TODO: find a way to do this that works if more than one item has the same name
         Item[] searchResults = new Item[50];
         int currentIndex = 0;
         //Loop through the items array comparing itemName to the current Item.getName()
         for(int i = 1; i<items.size(); i++){
-            if(itemName.contains(items.get(i).getName())){
+            if(items.get(i).getName().contains(itemName)){
                 searchResults[currentIndex] = items.get(i);
                 currentIndex++;
             }
@@ -93,5 +103,12 @@ public class ItemManager{
             e.printStackTrace();
             return false;
         }
+    }
+    public String[] getAllItemNames(){
+        String[] itemNames = new String[items.size()];
+        for(int i = 0; i<items.size(); i++){
+            itemNames[0] = items.get(i).getName();
+        }
+        return itemNames;
     }
 }

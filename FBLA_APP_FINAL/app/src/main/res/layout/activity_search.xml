@@ -12,7 +12,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:layout_width="match_parent"
+            android:layout_width="150dp"
             android:layout_height="50dp"
             android:id="@+id/searchEditText"
             android:hint="What would you like to find?"/>

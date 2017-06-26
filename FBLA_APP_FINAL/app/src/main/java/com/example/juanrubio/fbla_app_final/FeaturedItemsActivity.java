@@ -1,8 +1,13 @@
 package com.example.juanrubio.fbla_app_final;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,9 +17,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
 public class FeaturedItemsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    ItemManager itemManager = MainActivity.getGlobalItemManager();
+    CartManager cartManager = MainActivity.getGlobalCartManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +46,52 @@ public class FeaturedItemsActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        ListView cartListView = (ListView)findViewById(R.id.cartListView);
+        String[] cartItemNames = cartManager.getItemNames();
+        ArrayAdapter<String> cartAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, cartItemNames);
+        cartListView.setAdapter(cartAdapter);
+        cartListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+                TextView textView = (TextView)view;
+                String itemName = textView.getText().toString();
+                final int itemIndex = cartManager.getIndex(itemName);
+                CharSequence options[] = new CharSequence[] {"Remove", "Cancel"};
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(getBaseContext());
+                builder.setTitle("Would you like to remove "+itemName+" from your cart?");
+                builder.setItems(options, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if(which==0){
+                            cartManager.removeItem(itemIndex);
+                            dialog.dismiss();
+                        }
+                        else if(which==1){
+                            dialog.dismiss();
+                        }
+                    }
+                });
+                builder.show();
+            }
+        });
+
+
+        ListView featuredItemsListView = (ListView)findViewById(R.id.featuredItemsListView);
+        String[] featuredItemNames = itemManager.getAllItemNames();
+        ArrayAdapter<String> featuredAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, featuredItemNames);
+        featuredItemsListView.setAdapter(featuredAdapter);
+        featuredItemsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                TextView textView = (TextView)view;
+                String itemName = textView.getText().toString();
+                final int itemIndex = itemManager.getIndex(itemName);
+                Intent intent = new Intent(getBaseContext(), ItemInformationActivity.class);
+                intent.putExtra("ITEM_INDEX", String.valueOf(itemIndex));
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -63,9 +123,11 @@ public class FeaturedItemsActivity extends AppCompatActivity
             return true;
         }
         //I tried, but I didn't know what the name of the next activity was
-        /*if (id == R.id.action_search){
-            startActivity (new Intent(this.))
-        }*/
+        if (id == R.id.action_search){
+            Intent intent = new Intent(this, SearchActivity.class);
+            startActivity(intent);
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -93,5 +155,8 @@ public class FeaturedItemsActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    public void reloadCart(){ //Loads the cart to start with, and reloads when it changes
+
     }
 }

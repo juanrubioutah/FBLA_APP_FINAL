@@ -1,5 +1,6 @@
 package com.example.juanrubio.fbla_app_final;
 
+import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Context;
 import android.os.Build;
@@ -20,7 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 
 @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-public class SearchActivity extends ListActivity {
+public class SearchActivity extends AppCompatActivity {
 
     EditText searchEditText;
 
@@ -38,13 +39,13 @@ public class SearchActivity extends ListActivity {
 
     }
     public void search(View view){
-        ProgressBar progressBar = new ProgressBar(this);
+        /*ProgressBar progressBar = new ProgressBar(this);
         progressBar.setLayoutParams(new AbsListView.LayoutParams(AbsListView.LayoutParams.WRAP_CONTENT, AbsListView.LayoutParams.WRAP_CONTENT, Gravity.CENTER));
         progressBar.setIndeterminate(true);
         getListView().setEmptyView(progressBar);
 
         ViewGroup root = (ViewGroup)findViewById(android.R.id.content);
-        root.addView(progressBar);
+        root.addView(progressBar);*/
 
         String query = searchEditText.getText().toString();
 
@@ -56,7 +57,7 @@ public class SearchActivity extends ListActivity {
             names[i] = results[i].getName();
         }
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, names);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, names);
         listView.setAdapter(adapter);
     }
 }

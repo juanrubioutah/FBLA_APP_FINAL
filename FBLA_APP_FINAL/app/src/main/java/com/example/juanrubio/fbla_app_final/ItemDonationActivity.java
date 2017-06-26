@@ -22,7 +22,7 @@ import android.widget.TextView;
 import java.io.File;
 
 @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-public class ItemDonationActivity extends AppCompatActivity { //TODO: add padding to the xml elements
+public class ItemDonationActivity extends AppCompatActivity {
 
     private Uri imageCaptureUri;
     private static final int PICK_FROM_CAMERA = 1;

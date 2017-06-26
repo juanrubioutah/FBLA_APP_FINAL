@@ -31,5 +31,22 @@ public class CartManager {
     public void removeItem(int index){
         cart.remove(index);
     }
+    public String[] getItemNames(){
+        String[] itemNames = new String[cart.size()];
+        for(int i = 0; i<cart.size(); i++){
+            itemNames[i] = cart.get(i).getName();
+        }
+        return itemNames;
+    }
+    public int getIndex(String itemName){
+        int index = -1;
+        for(int i = 0; i<cart.size(); i++){
+            if(cart.get(i).getName().equals(itemName)){
+                index = i;
+                return index;
+            }
+        }
+        return index;
+    }
 
 }
