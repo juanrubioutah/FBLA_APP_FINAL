@@ -87,7 +87,7 @@
                     android:onClick="buy"
                     android:scaleType="fitCenter"
                     android:padding="10dp"
-                    app:srcCompat="@drawable/btn_shop" />
+                    app:srcCompat="@drawable/btn_tag" />
 
                 <TextView
                     android:layout_width="match_parent"
