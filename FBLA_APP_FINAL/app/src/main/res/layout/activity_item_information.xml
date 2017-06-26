@@ -44,6 +44,14 @@
                 android:textSize="20sp"
                 android:textColor="@color/colorTitleText"
                 android:gravity="center_vertical"/>
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:text="Price: "
+                android:textSize="20sp"
+                android:textColor="@color/colorTitleText"
+                android:gravity="center_vertical"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

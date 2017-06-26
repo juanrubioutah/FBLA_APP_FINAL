@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
         //set the splash screen's image view to have the correct image
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
-        splashScreenImageView = (ImageView) findViewById(R.id.splashScreenImageView);
-        splashScreenImageView.setImageResource(R.drawable.splashscreen);
+        splashScreenImageView = (ImageView) findViewById(R.id.splashscreen);
+        splashScreenImageView.setImageResource(R.drawable.cardboardcat);
         mainItemManager.readItemsArray();
         int secondsDelayed = 2;
         new Handler().postDelayed(new Runnable() {

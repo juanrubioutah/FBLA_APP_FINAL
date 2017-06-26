@@ -62,6 +62,10 @@ public class FeaturedItemsActivity extends AppCompatActivity
         if (id == R.id.action_settings) {
             return true;
         }
+        //I tried, but I didn't know what the name of the next activity was
+        /*if (id == R.id.action_search){
+            startActivity (new Intent(this.))
+        }*/
 
         return super.onOptionsItemSelected(item);
     }
