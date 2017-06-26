@@ -98,7 +98,7 @@ public class ItemDonationActivity extends AppCompatActivity { //TODO: add paddin
         Bitmap itemImage;
         //Check that all of the fields are completed, then store the values
         if(!(itemNameEditText.getText()==null)){
-            itemName = itemNameEditText.toString();
+            itemName = itemNameEditText.getText().toString();
         }
         else{
             incompleteTextView.setVisibility(View.VISIBLE);

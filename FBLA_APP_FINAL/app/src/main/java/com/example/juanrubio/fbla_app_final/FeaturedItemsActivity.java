@@ -1,5 +1,6 @@
 package com.example.juanrubio.fbla_app_final;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -63,9 +64,10 @@ public class FeaturedItemsActivity extends AppCompatActivity
             return true;
         }
         //I tried, but I didn't know what the name of the next activity was
-        /*if (id == R.id.action_search){
-            startActivity (new Intent(this.))
-        }*/
+        if (id == R.id.action_search){
+            Intent intent = new Intent(this, SearchActivity.class);
+            startActivity(intent);
+        }
 
         return super.onOptionsItemSelected(item);
     }
