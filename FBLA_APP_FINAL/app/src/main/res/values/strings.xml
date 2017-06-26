@@ -8,4 +8,20 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="search">Search</string>
+
+    <string-array name="item_name">
+        <item>Chair</item>
+        <item>Mirror</item>
+        <item>Keyboard</item>
+        <item>Glass cup</item>
+        <item>AP Computer Science</item>
+        <item>1000 piece puzzle</item>
+
+    </string-array>
+
+    <array name="item_image">
+        <item>@drawable/ic_bag</item>
+    </array>
+
+
 </resources>
