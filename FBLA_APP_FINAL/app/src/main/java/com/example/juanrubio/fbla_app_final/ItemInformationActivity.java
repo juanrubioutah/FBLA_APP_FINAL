@@ -41,7 +41,7 @@ public class ItemInformationActivity extends AppCompatActivity {
 
         itemInformationLayout = (LinearLayout)findViewById(R.id.itemInformationLayout);
 
-        titleTextView = (TextView)findViewById(R.id.itemTitleTextView);
+        titleTextView = (TextView)findViewById(R.id.itemNameTextView);
         imageView = (ImageView)findViewById(R.id.itemImageImageView);
         priceTextView = (TextView)findViewById(R.id.itemPriceTextView);
         conditionTextView = (TextView)findViewById(R.id.itemConditionTextView);
