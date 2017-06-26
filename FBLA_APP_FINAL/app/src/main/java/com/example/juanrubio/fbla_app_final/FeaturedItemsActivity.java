@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -27,12 +28,9 @@ public class FeaturedItemsActivity extends AppCompatActivity
     ItemManager itemManager = MainActivity.getGlobalItemManager();
     CartManager cartManager = MainActivity.getGlobalCartManager();
 
-<<<<<<< HEAD
     LinearLayout cartLayout;
     LinearLayout featuredItemsLayout;
 
-=======
->>>>>>> origin/master
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,12 +48,11 @@ public class FeaturedItemsActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-<<<<<<< HEAD
+
         ListView cartListView = (ListView) findViewById(R.id.cartListView);
         cartLayout = (LinearLayout) findViewById(R.id.cartLayout);
-=======
-        ListView cartListView = (ListView)findViewById(R.id.cartListView);
->>>>>>> origin/master
+
+
         String[] cartItemNames = cartManager.getItemNames();
         ArrayAdapter<String> cartAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, cartItemNames);
         cartListView.setAdapter(cartAdapter);
@@ -167,7 +164,7 @@ public class FeaturedItemsActivity extends AppCompatActivity
     public void reloadCart(){ //Loads the cart to start with, and reloads when it changes
 
     }
-<<<<<<< HEAD
+
     public void clear(View view){ //clears the cart of all items
         cartManager.clearAllItems();
         Intent intent = getIntent();
@@ -178,6 +175,5 @@ public class FeaturedItemsActivity extends AppCompatActivity
         Intent intent = new Intent(getBaseContext(), PaymentDetailsActivity.class);
         startActivity(intent);
     }
-=======
->>>>>>> origin/master
+
 }
