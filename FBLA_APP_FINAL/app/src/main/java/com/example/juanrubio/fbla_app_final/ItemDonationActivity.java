@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
@@ -80,12 +81,16 @@ public class ItemDonationActivity extends AppCompatActivity {
                 if(resultCode == RESULT_OK){
                     Uri selectedImage = data.getData();
                     imageView.setImageURI(selectedImage);
+                    BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
+                    image = drawable.getBitmap();
                 }
                 break;
             case 1:
                 if(resultCode == RESULT_OK){
                     Uri selectedImage = data.getData();
                     imageView.setImageURI(selectedImage);
+                    BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
+                    image = drawable.getBitmap();
                 }
                 break;
         }

@@ -51,7 +51,7 @@ public class SearchActivity extends AppCompatActivity {
 
         Item[] results = manager.searchItem(query);
 
-        String[] names = new String[50]; //max search results of 50
+        String[] names = new String[manager.getAllItems().size()]; //make the search results as large as necessary
 
         for(int i = 0; i<results.length; i++){
             names[i] = results[i].getName();

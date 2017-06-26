@@ -1,6 +1,5 @@
 package com.example.juanrubio.fbla_app_final;
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
@@ -39,8 +38,8 @@ public class ItemManager{
         return index;
     }
     //Searches the items ArrayList and returns an array of Items that match the String itemName
-    public Item[] searchItem(String itemName){ //TODO: find a way to do this that works if more than one item has the same name
-        Item[] searchResults = new Item[50];
+    public Item[] searchItem(String itemName){
+        Item[] searchResults = new Item[items.size()]; //as many as necessary
         int currentIndex = 0;
         //Loop through the items array comparing itemName to the current Item.getName()
         for(int i = 1; i<items.size(); i++){
