@@ -8,22 +8,12 @@
     tools:context="com.example.juanrubio.fbla_app_final.FeaturedItemsActivity"
     tools:showIn="@layout/app_bar_featured_items">
 
-    <LinearLayout
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/featuredItemsLinearLayout">
-
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/featuredItemsListView">
-        </ListView>
-
-    </LinearLayout>
+        android:id="@+id/featuredItemsListView">
 
 
-
-
-
+    </ListView>
 
 </android.support.constraint.ConstraintLayout>

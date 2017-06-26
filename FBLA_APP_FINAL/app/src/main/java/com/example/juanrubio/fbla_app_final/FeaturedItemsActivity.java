@@ -17,9 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
@@ -29,9 +27,12 @@ public class FeaturedItemsActivity extends AppCompatActivity
     ItemManager itemManager = MainActivity.getGlobalItemManager();
     CartManager cartManager = MainActivity.getGlobalCartManager();
 
+<<<<<<< HEAD
     LinearLayout cartLayout;
     LinearLayout featuredItemsLayout;
 
+=======
+>>>>>>> origin/master
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,69 +50,56 @@ public class FeaturedItemsActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+<<<<<<< HEAD
         ListView cartListView = (ListView) findViewById(R.id.cartListView);
         cartLayout = (LinearLayout) findViewById(R.id.cartLayout);
+=======
+        ListView cartListView = (ListView)findViewById(R.id.cartListView);
+>>>>>>> origin/master
         String[] cartItemNames = cartManager.getItemNames();
-        if (cartItemNames.length==0) {
-            cartLayout.removeView(cartListView);
-            TextView textView = new TextView(getBaseContext());
-            textView.setText("Your cart is empty.");
-            cartLayout.addView(textView);
-        } else {
-            ArrayAdapter<String> cartAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, cartItemNames);
-            cartListView.setAdapter(cartAdapter);
-            cartListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    TextView textView = (TextView) view;
-                    String itemName = textView.getText().toString();
-                    final int itemIndex = cartManager.getIndex(itemName);
-                    CharSequence options[] = new CharSequence[]{"Remove", "Cancel"};
+        ArrayAdapter<String> cartAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, cartItemNames);
+        cartListView.setAdapter(cartAdapter);
+        cartListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+                TextView textView = (TextView)view;
+                String itemName = textView.getText().toString();
+                final int itemIndex = cartManager.getIndex(itemName);
+                CharSequence options[] = new CharSequence[] {"Remove", "Cancel"};
 
-                    AlertDialog.Builder builder = new AlertDialog.Builder(FeaturedItemsActivity.this);
-                    builder.setTitle("Would you like to remove \'" + itemName + "\' from your cart?");
-                    builder.setItems(options, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            if (which == 0) {
-                                cartManager.removeItem(itemIndex);
-                                Intent intent = getIntent();
-                                finish();
-                                startActivity(intent);
-                                dialog.dismiss();
-                            } else if (which == 1) {
-                                dialog.dismiss();
-                            }
+                AlertDialog.Builder builder = new AlertDialog.Builder(getBaseContext());
+                builder.setTitle("Would you like to remove "+itemName+" from your cart?");
+                builder.setItems(options, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if(which==0){
+                            cartManager.removeItem(itemIndex);
+                            dialog.dismiss();
                         }
-                    });
-                    builder.show();
-                }
-            });
-        }
+                        else if(which==1){
+                            dialog.dismiss();
+                        }
+                    }
+                });
+                builder.show();
+            }
+        });
 
 
-        ListView featuredItemsListView = (ListView) findViewById(R.id.featuredItemsListView);
-        featuredItemsLayout = (LinearLayout) findViewById(R.id.featuredItemsLinearLayout);
+        ListView featuredItemsListView = (ListView)findViewById(R.id.featuredItemsListView);
         String[] featuredItemNames = itemManager.getAllItemNames();
-        if (featuredItemNames.length==0) {
-            featuredItemsLayout.removeView(featuredItemsListView);
-            TextView textView = new TextView(getBaseContext());
-            textView.setText("There are currently no featured items");
-            featuredItemsLayout.addView(textView);
-        } else {
-            ArrayAdapter<String> featuredAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, featuredItemNames);
-            featuredItemsListView.setAdapter(featuredAdapter);
-            featuredItemsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    TextView textView = (TextView) view;
-                    String itemName = textView.getText().toString();
-                    final int itemIndex = itemManager.getIndex(itemName);
-                    Intent intent = new Intent(getBaseContext(), ItemInformationActivity.class);
-                    intent.putExtra("ITEM_INDEX", String.valueOf(itemIndex));
-                    startActivity(intent);
-                }
-            });
-        }
+        ArrayAdapter<String> featuredAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, featuredItemNames);
+        featuredItemsListView.setAdapter(featuredAdapter);
+        featuredItemsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                TextView textView = (TextView)view;
+                String itemName = textView.getText().toString();
+                final int itemIndex = itemManager.getIndex(itemName);
+                Intent intent = new Intent(getBaseContext(), ItemInformationActivity.class);
+                intent.putExtra("ITEM_INDEX", String.valueOf(itemIndex));
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -179,6 +167,7 @@ public class FeaturedItemsActivity extends AppCompatActivity
     public void reloadCart(){ //Loads the cart to start with, and reloads when it changes
 
     }
+<<<<<<< HEAD
     public void clear(View view){ //clears the cart of all items
         cartManager.clearAllItems();
         Intent intent = getIntent();
@@ -189,4 +178,6 @@ public class FeaturedItemsActivity extends AppCompatActivity
         Intent intent = new Intent(getBaseContext(), PaymentDetailsActivity.class);
         startActivity(intent);
     }
+=======
+>>>>>>> origin/master
 }

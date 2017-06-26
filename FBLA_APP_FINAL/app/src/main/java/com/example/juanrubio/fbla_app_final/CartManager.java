@@ -49,6 +49,7 @@ public class CartManager {
         }
         return index;
     }
+<<<<<<< HEAD
     public void clearAllItems(){
         ArrayList<Item> newCart = new ArrayList<Item>();
         cart = newCart;
@@ -59,5 +60,7 @@ public class CartManager {
     public int getTotalCost(){
         return totalCost;
     }
+=======
+>>>>>>> origin/master
 
 }

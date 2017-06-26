@@ -15,9 +15,21 @@ import java.util.ArrayList;
 @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
 public class PurchaseActivity extends AppCompatActivity {
 
+<<<<<<< HEAD
     ScrollView scrollView;
 
     CartManager manager = MainActivity.getGlobalCartManager();
+=======
+    ItemManager myItemManager = MainActivity.getGlobalItemManager();
+    Item myItem;
+    int myIndex;
+
+    TextView incompleteTextView = (TextView)findViewById(R.id.incompleteTextView);
+
+    EditText creditCardNumberEditText = (EditText)findViewById(R.id.purchaseCreditCardNumber);
+    EditText creditCardExpirationEditText = (EditText)findViewById(R.id.purchaseCreditCardExpiration);
+    EditText creditCardCVVEditText = (EditText)findViewById(R.id.purchaseCreditCardCVV);
+>>>>>>> origin/master
 
     public int totalPrice;
 
@@ -26,6 +38,7 @@ public class PurchaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchase);
 
+<<<<<<< HEAD
         scrollView = (ScrollView)findViewById(R.id.purchaseScrollView);
 
         ArrayList<Item> cart = new ArrayList<Item>();
@@ -46,6 +59,10 @@ public class PurchaseActivity extends AppCompatActivity {
         }
         TextView totalPriceTextView = new TextView(this);
         totalPriceTextView.setText("GRAND TOTAL: "+totalPrice);
+=======
+        Intent intent = getIntent();
+        myIndex = intent.getIntExtra("itemIndex", 0);
+>>>>>>> origin/master
 
 
     }
