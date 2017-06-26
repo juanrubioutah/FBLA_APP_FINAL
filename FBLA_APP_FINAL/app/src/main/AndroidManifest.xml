@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ItemInformationActivity" />
-        <activity android:name=".PurchaseActivity" />
+        <activity android:name=".PaymentDetailsActivity" />
         <activity android:name=".MainMenuActivity" />
         <activity android:name=".ItemDonationActivity" />
         <activity android:name=".PurchaseCompletedActivity" />
@@ -38,7 +38,8 @@
             android:name=".FeaturedItemsActivity"
             android:label="@string/title_activity_featured_items"
             android:theme="@style/AppTheme" />
-        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".PurchaseActivity"></activity>
     </application>
 
 </manifest>

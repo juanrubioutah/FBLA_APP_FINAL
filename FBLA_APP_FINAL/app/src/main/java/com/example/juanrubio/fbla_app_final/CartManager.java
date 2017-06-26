@@ -10,6 +10,7 @@ import java.util.ArrayList;
  */
 @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
 public class CartManager {
+    public int totalCost;
     ArrayList<Item> cart = new ArrayList<>();
     public void addItem(Item item){
         cart.add(item);
@@ -51,6 +52,12 @@ public class CartManager {
     public void clearAllItems(){
         ArrayList<Item> newCart = new ArrayList<Item>();
         cart = newCart;
+    }
+    public void setTotalCost(int totalCost){
+        this.totalCost = totalCost;
+    }
+    public int getTotalCost(){
+        return totalCost;
     }
 
 }

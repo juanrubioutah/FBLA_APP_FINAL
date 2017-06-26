@@ -24,7 +24,7 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_featured_items">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/cartLayout">
@@ -61,7 +61,7 @@
                         android:onClick="completePurchase"/>
                 </LinearLayout>
 
-        </RelativeLayout>
+        </LinearLayout>
 
     </android.support.design.widget.NavigationView>
 

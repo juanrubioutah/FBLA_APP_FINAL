@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -17,15 +15,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ViewGroup;
-import android.view.ViewParent;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
 public class FeaturedItemsActivity extends AppCompatActivity
@@ -34,7 +29,7 @@ public class FeaturedItemsActivity extends AppCompatActivity
     ItemManager itemManager = MainActivity.getGlobalItemManager();
     CartManager cartManager = MainActivity.getGlobalCartManager();
 
-    RelativeLayout cartLayout;
+    LinearLayout cartLayout;
     LinearLayout featuredItemsLayout;
 
     @Override
@@ -55,7 +50,7 @@ public class FeaturedItemsActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         ListView cartListView = (ListView) findViewById(R.id.cartListView);
-        cartLayout = (RelativeLayout) findViewById(R.id.cartLayout);
+        cartLayout = (LinearLayout) findViewById(R.id.cartLayout);
         String[] cartItemNames = cartManager.getItemNames();
         if (cartItemNames.length==0) {
             cartLayout.removeView(cartListView);
@@ -191,7 +186,7 @@ public class FeaturedItemsActivity extends AppCompatActivity
         startActivity(intent);
     }
     public void completePurchase(View view){ //purchases all items in the cart
-        Intent intent = new Intent(getBaseContext(), PurchaseActivity.class);
+        Intent intent = new Intent(getBaseContext(), PaymentDetailsActivity.class);
         startActivity(intent);
     }
 }

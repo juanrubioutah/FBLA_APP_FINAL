@@ -6,124 +6,29 @@
     android:layout_height="match_parent"
     tools:context="com.example.juanrubio.fbla_app_final.PurchaseActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:background="@color/colorBackGround">
+        android:id="@+id/purchaseScrollView">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Please Complete All Fields"
-            android:id="@+id/purchaseIncompleteTextView"
-            android:visibility="invisible"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal">
+    </ScrollView>
 
-            <TextView
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:text="Name:"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/purchaseCreditCardName"
-                android:hint="Full Name"
-                android:gravity="bottom"/>
-        </LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:onClick="cancel" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="30dp">
-
-            <TextView
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:text="Credit Card Num:"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/purchaseCreditCardNumber"
-                android:hint="Credit Card Number"
-                android:gravity="bottom"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="30dp">
-
-            <TextView
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:text="Expiration Date:"
-                />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/purchaseCreditCardExpiration"
-                android:hint="MM/YY"
-                android:gravity="bottom"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="30dp">
-
-            <TextView
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:text="CVV:"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/purchaseCreditCardCVV"
-                android:hint="***"
-                android:gravity="bottom"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="50dp"
-            android:gravity="end">
-
-            <Button
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:text="Cancel"
-                android:onClick="cancel"
-                android:background="@drawable/btncircle"
-                android:textColor="@color/colorWhiteText"/>
-
-            <Button
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:text="Purchase"
-                android:onClick="purchase"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/btncircle"
-                android:textColor="@color/colorWhiteText"/>
-        </LinearLayout>
-
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Proceed to Payment Details"
+            android:onClick="pay"/>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
