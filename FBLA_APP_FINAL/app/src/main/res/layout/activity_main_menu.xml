@@ -49,7 +49,7 @@
 
 
                 <ImageButton
-                    android:id="@+id/imageButton"
+                    android:id="@+id/donateButton"
                     android:layout_width="wrap_content"
                     android:layout_height="150dp"
                     android:layout_gravity="center_horizontal"
@@ -105,6 +105,16 @@
 
 
         </LinearLayout>
+
+        <Button
+            android:id="@+id/info_direct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="First time? Click here!"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:background="@color/colorBackGround"/>
     </LinearLayout>
 
 
