@@ -10,17 +10,25 @@
         android:layout_marginTop="8dp"
         android:layout_marginLeft="8dp">
 
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="invisible"/>
+
         <ImageView
             android:layout_width="84dp"
             android:layout_height="match_parent"
             android:padding="8dp"/>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:gravity="center_vertical"
-            android:paddingLeft="24dp">
+            android:paddingLeft="16dp">
 
             <TextView
                 android:id="@+id/item_name"
@@ -28,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:text="Item Name"
                 android:textColor="@color/colorTitleText"
-                android:textSize="20sp"/>
+                android:textSize="18sp"/>
 
             <TextView
                 android:id="@+id/item_price"
@@ -36,15 +44,10 @@
                 android:layout_height="wrap_content"
                 android:text="Price"
                 android:textColor="@color/colorTitleText"
-                android:textSize="20sp"/>
+                android:textSize="18sp"/>
+
 
         </LinearLayout>
-
-
-
-
-
-
 
 
 

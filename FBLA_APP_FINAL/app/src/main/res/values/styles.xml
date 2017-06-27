@@ -14,7 +14,13 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="FeaturedItemsTheme" parent="ThemeOverlay.AppCompat.Dark">
+    <style name="AppTheme.ActionBar">
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+    <style name="AppBar" parent="ThemeOverlay.AppCompat.Dark">
         <item name="android:textColorPrimary">@color/colorWhiteText</item>
         <item name="android:textColorSecondary">@color/colorSecondary</item>
 
