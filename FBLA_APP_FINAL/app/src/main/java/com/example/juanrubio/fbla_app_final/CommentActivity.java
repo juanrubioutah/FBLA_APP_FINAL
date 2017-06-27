@@ -44,8 +44,7 @@ public class CommentActivity extends AppCompatActivity {
     public void comment(View view){
         if(!(commentNameEditText.getText().toString().equals(""))){
             if(!(commentEditText.getText().toString().equals(""))){
-                int starNum = starRatingBar.getNumStars();
-                myItem.addComment(commentNameEditText.getText().toString(), commentEditText.getText().toString(), starNum);
+                myItem.addComment(commentNameEditText.getText().toString(), commentEditText.getText().toString());
                 Intent intent = new Intent(this, ItemInformationActivity.class);
                 String s = Integer.toString(itemIndex);
                 intent.putExtra("ITEM_INDEX", s);

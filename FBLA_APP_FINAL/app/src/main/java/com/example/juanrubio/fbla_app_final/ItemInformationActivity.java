@@ -89,11 +89,6 @@ public class ItemInformationActivity extends AppCompatActivity {
                 commentTextView.setTextSize(18);
                 LinearLayout largerLayout = new LinearLayout(this);
                 largerLayout.setOrientation(LinearLayout.VERTICAL);
-                RatingBar ratingBar = new RatingBar(this);
-                ratingBar.setNumStars(Integer.valueOf(comments[i][2]));
-                ratingBar.setIsIndicator(false);
-                ratingBar.setMax(Integer.valueOf(comments[i][2]));
-                largerLayout.addView(ratingBar);
                 LinearLayout linearLayout = new LinearLayout(this);
                 linearLayout.setOrientation(LinearLayout.HORIZONTAL);
                 linearLayout.addView(nameTextView);

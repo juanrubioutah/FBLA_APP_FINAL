@@ -35,11 +35,6 @@
             android:textColor="@color/colorText"
             android:inputType="textPersonName" />
 
-        <RatingBar
-            android:id="@+id/ratingBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:numStars="5" />
 
         <EditText
             android:id="@+id/commentEditText"
