@@ -1,5 +1,7 @@
 package com.example.juanrubio.fbla_app_final;
 
+import android.app.Activity;
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 /**
@@ -7,5 +9,8 @@ import android.support.v7.app.AppCompatActivity;
  */
 
 public class IntroductionActivity extends AppCompatActivity {
-
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.intro);
+    }
 }

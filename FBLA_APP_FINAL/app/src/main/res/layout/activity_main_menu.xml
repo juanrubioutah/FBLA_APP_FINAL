@@ -114,7 +114,8 @@
             android:text="First time? Click here!"
             android:textColor="@color/colorPrimary"
             android:textSize="20sp"
-            android:background="@color/colorBackGround"/>
+            android:background="@color/colorBackGround"
+            android:onClick="inform"/>
     </LinearLayout>
 
 

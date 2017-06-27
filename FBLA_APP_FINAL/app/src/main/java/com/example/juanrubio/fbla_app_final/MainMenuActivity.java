@@ -26,8 +26,6 @@ public class MainMenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
-        inform();
-
     }
     public void buy(View view){
         Intent intent = new Intent(this, FeaturedItemsActivity.class);
@@ -37,15 +35,9 @@ public class MainMenuActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ItemDonationActivity.class);
         startActivity(intent);
     }
-    public void inform(){
-        infoBtn = (Button)findViewById(R.id.info_direct);
-        infoBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainMenuActivity.this, IntroductionActivity.class);
-                startActivity(intent);
-            }
-        });
+    public void inform(View view){
+        Intent intent = new Intent(this, IntroductionActivity.class);
+        startActivity(intent);
     }
 }
 

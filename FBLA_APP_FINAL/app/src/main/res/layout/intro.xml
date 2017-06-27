@@ -16,7 +16,7 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome to AlleyCat, a FBLA Mobile Yard Sale App" />
+        android:text="Welcome to AlleyCat, an FBLA Mobile Yard Sale App" />
 
     <Button
         android:id="@+id/play_button"
