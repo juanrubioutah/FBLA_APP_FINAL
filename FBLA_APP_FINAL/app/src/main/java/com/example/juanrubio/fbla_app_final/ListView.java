@@ -18,23 +18,22 @@ public class ListView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view);
-<<<<<<< HEAD
+
         ///ListView listView = (ListView)findViewById(R.id.list_view);
-=======
+
         android.widget.ListView listView = (android.widget.ListView)findViewById(R.id.list_view);
->>>>>>> origin/master
+
         ArrayList<Product> products = new ArrayList<Product>();
 
 
         //somehow get all the array info here
-<<<<<<< HEAD
+
 
         CustomAdapter adapter = new CustomAdapter(getApplicationContext(),R.layout.single_row, products);
         //ListView.setAdapter(adapter);
-=======
+
         String[] itemNames = itemManager.getAllItemNames();
         String[] cartNames = cartManager.getItemNames();
-        CustomAdapter adapter = new CustomAdapter(getApplicationContext(),R.layout.single_row, );
->>>>>>> origin/master
+        //CustomAdapter adapter = new CustomAdapter(getApplicationContext(),R.layout.single_row, );
     }
 }
