@@ -13,12 +13,13 @@ public class ListView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view);
-        ListView listView = (ListView)findViewById(R.id.list_view);
+        ///ListView listView = (ListView)findViewById(R.id.list_view);
         ArrayList<Product> products = new ArrayList<Product>();
 
 
         //somehow get all the array info here
 
-        CustomAdapter adapter = new CustomAdapter(getApplicationContext(),R.layout.single_row, )
+        CustomAdapter adapter = new CustomAdapter(getApplicationContext(),R.layout.single_row, products);
+        //ListView.setAdapter(adapter);
     }
 }
