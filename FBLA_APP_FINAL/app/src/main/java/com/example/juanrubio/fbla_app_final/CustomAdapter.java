@@ -40,12 +40,12 @@ public class CustomAdapter extends ArrayAdapter<Product> {
         TextView productNameTextView = (TextView)convertView.findViewById(R.id.item_name);
         TextView productPriceTextView = (TextView)convertView.findViewById(R.id.item_price);
         //CheckBox productDeleteCheckBox = (CheckBox)convertView.findViewById(R.id.check_delete);
-        //ImageView productImageView = (ImageView)convertView.findViewById(R.id.item_image);
+        ImageView productImageView = (ImageView)convertView.findViewById(R.id.item_image);
 
         productNameTextView.setText(product.name);
         productPriceTextView.setText(product.price);
         //productDeleteCheckBox.setChecked(product.isChecked);
-        //productImageView.setImageResource(product.imageId);
+        productImageView.setImageResource(product.imageId);
 
         return convertView;
     }
