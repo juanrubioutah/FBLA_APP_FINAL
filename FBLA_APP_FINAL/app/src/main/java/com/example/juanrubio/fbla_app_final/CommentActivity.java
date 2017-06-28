@@ -30,7 +30,7 @@ public class CommentActivity extends AppCompatActivity {
         commentCompleteTextView = (TextView)findViewById(R.id.commentCompleteTextView);
         commentNameEditText = (EditText)findViewById(R.id.commentNameEditText);
         commentEditText = (EditText)findViewById(R.id.commentEditText);
-        starRatingBar = (RatingBar)findViewById(R.id.ratingBar);
+        //starRatingBar = (RatingBar)findViewById(R.id.ratingBar);
 
         itemIndex = getIntent().getIntExtra("ITEM_INDEX", itemIndex);
         myItem = itemManager.getItem(itemIndex);

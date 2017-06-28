@@ -8,33 +8,68 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin">
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="48dp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome to AlleyCat, an FBLA Mobile Yard Sale App" />
-
-    <Button
-        android:id="@+id/play_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/btncircle"
-        android:text="Play"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:text="Welcome to AlleyCat"
+        android:fontFamily="sans-serif-smallcaps"
+        android:background="@color/colorPrimary"
+        android:textStyle="bold"
+        android:textSize="26sp"
+        android:gravity="center"
         android:textColor="@color/colorWhiteText"/>
 
-    <VideoView
-        android:id="@+id/videoView"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="100dp" />
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_marginBottom="20dp"
+        android:text="an FBLA Mobile App"
+        android:textColor="@color/colorText"
+        android:textSize="20sp"
+        android:gravity="center"/>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:padding="15dp"
+        android:background="@color/colorPrimary"
+        android:scaleType="fitXY"
+        android:src="@drawable/fbla_sign"/>
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="The objective of this application was to create a digital yard sale where users could donate and buy items to help fund for the trip to the FBLA national leadership conference." />
+        android:textColor="@color/colorTitleText"
+        android:textSize="16sp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp"
+        android:text="  The objective of this application is to create a digital yard sale, where users can donate and buy items. The money will help fund the AlleyCat team go to Nationals. "/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorTitleText"
+        android:textSize="16sp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="  Thank you for your patronage!"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:textColor="@color/colorTitleText"
+        android:textSize="16sp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="16dp"
+        android:text="  -The AlleyCat Team"/>
 </LinearLayout>

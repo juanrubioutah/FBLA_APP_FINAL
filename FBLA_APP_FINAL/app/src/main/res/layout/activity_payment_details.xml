@@ -25,86 +25,145 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="50dp"
+                android:layout_width="80dp"
                 android:layout_height="match_parent"
-                android:text="Name:"/>
+                android:text="Name:"
+                android:textSize="16dp"
+                android:textColor="@color/colorTitleText"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/purchaseCreditCardName"
                 android:hint="Full Name"
+                android:textColor="@color/colorText"
+                android:textSize="18sp"
                 android:gravity="bottom"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="20dp"
+            >
 
             <TextView
-                android:layout_width="50dp"
+                android:layout_width="80dp"
                 android:layout_height="match_parent"
-                android:text="Credit Card Num:"/>
+                android:text="Card Info:"
+                android:textSize="16dp"
+                android:textColor="@color/colorTitleText"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/purchaseCreditCardNumber"
                 android:hint="Credit Card Number"
+                android:textSize="18sp"
                 android:gravity="bottom"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="20dp">
 
             <TextView
-                android:layout_width="50dp"
+                android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:text="Expiration Date:"
-                />
+                android:textSize="16dp"
+                android:textColor="@color/colorTitleText"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/purchaseCreditCardExpiration"
+                android:textSize="18sp"
                 android:hint="MM/YY"
                 android:gravity="bottom"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="20dp">
 
             <TextView
-                android:layout_width="50dp"
+                android:layout_width="80dp"
                 android:layout_height="match_parent"
+                android:textSize="16dp"
+                android:textColor="@color/colorTitleText"
                 android:text="CVV:"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/purchaseCreditCardCVV"
+                android:textSize="18sp"
                 android:hint="***"
                 android:gravity="bottom"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:textSize="16dp"
+                android:textColor="@color/colorTitleText"
+                android:text="Address:"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/purchaseStreetAddress"
+                android:hint="Street"
+                android:maxLines="2"
+                android:textSize="18sp"
+                android:gravity="bottom"/>
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:textSize="16dp"
+                android:textColor="@color/colorTitleText"
+                android:text="City:"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/purchaseCityState"
+                android:hint="City, State"
+                android:textSize="18sp"
+                android:gravity="bottom"/>
+        </LinearLayout>
+
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
             android:layout_marginTop="50dp"
-            android:gravity="end">
+            android:gravity="end|bottom">
 
             <Button
                 android:layout_width="100dp"
