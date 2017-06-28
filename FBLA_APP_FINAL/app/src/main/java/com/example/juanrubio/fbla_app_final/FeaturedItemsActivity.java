@@ -63,6 +63,8 @@ public class FeaturedItemsActivity extends AppCompatActivity
                 final int itemIndex = cartManager.getIndex(itemName);
                 CharSequence options[] = new CharSequence[] {"Remove", "Cancel"};
 
+
+                //TODO: fix the alertDialog
                 AlertDialog.Builder builder = new AlertDialog.Builder(getBaseContext());
                 builder.setTitle("Would you like to remove "+itemName+" from your cart?");
                 builder.setItems(options, new DialogInterface.OnClickListener() {
@@ -161,9 +163,6 @@ public class FeaturedItemsActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    public void reloadCart(){ //Loads the cart to start with, and reloads when it changes
-
-    }
 
     public void clear(View view){ //clears the cart of all items
         cartManager.clearAllItems();
@@ -172,7 +171,7 @@ public class FeaturedItemsActivity extends AppCompatActivity
         startActivity(intent);
     }
     public void completePurchase(View view){ //purchases all items in the cart
-        Intent intent = new Intent(getBaseContext(), PaymentDetailsActivity.class);
+        Intent intent = new Intent(getBaseContext(), PurchaseActivity.class);
         startActivity(intent);
     }
 
