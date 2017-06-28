@@ -42,7 +42,8 @@
         <activity android:name=".PurchaseActivity" />
         <activity
             android:name=".SearchBar"
-            android:theme="@style/AppTheme.ActionBar"/>
+            android:theme="@style/AppTheme.ActionBar" />
+        <activity android:name=".ListView"></activity>
     </application>
 
 </manifest>
