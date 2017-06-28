@@ -20,16 +20,7 @@ public class PurchaseActivity extends AppCompatActivity {
     ScrollView scrollView;
 
     CartManager manager = MainActivity.getGlobalCartManager();
-
-    ItemManager myItemManager = MainActivity.getGlobalItemManager();
-    Item myItem;
     int myIndex;
-
-    TextView incompleteTextView = (TextView)findViewById(R.id.incompleteTextView);
-
-    EditText creditCardNumberEditText = (EditText)findViewById(R.id.purchaseCreditCardNumber);
-    EditText creditCardExpirationEditText = (EditText)findViewById(R.id.purchaseCreditCardExpiration);
-    EditText creditCardCVVEditText = (EditText)findViewById(R.id.purchaseCreditCardCVV);
 
 
     public int totalPrice;
@@ -44,7 +35,7 @@ public class PurchaseActivity extends AppCompatActivity {
 
         ArrayList<Item> cart = new ArrayList<Item>();
         cart = manager.getCart();
-
+        //TODO: test this
         for(int i = 0; i<cart.size(); i++){
             TextView nameTextView = new TextView(this);
             TextView priceTextView = new TextView(this);
