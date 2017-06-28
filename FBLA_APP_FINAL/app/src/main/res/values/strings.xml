@@ -9,19 +9,28 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="search">Search</string>
 
-    <string-array name="item_name">
+    <string-array name="itemArray">
         <item>Chair</item>
-        <item>Mirror</item>
+        <item>Coach bag</item>
         <item>Keyboard</item>
-        <item>Glass cup</item>
+        <item>Coffee maker</item>
         <item>AP Computer Science</item>
-        <item>1000 piece puzzle</item>
+        <item>Coat</item>
 
     </string-array>
 
     <array name="item_image">
         <item>@drawable/ic_bag</item>
     </array>
+    
+    <string-array name="priceArray">
+        <item>8</item>
+        <item>22</item>
+        <item>4</item>
+        <item>25</item>
+        <item>5</item>
+        <item>10</item>
+    </string-array>
 
 
 </resources>
