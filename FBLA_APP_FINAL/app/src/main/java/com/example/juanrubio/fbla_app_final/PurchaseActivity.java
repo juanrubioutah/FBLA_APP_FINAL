@@ -5,6 +5,7 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -33,24 +34,17 @@ public class PurchaseActivity extends AppCompatActivity {
 
         scrollView = (ScrollView)findViewById(R.id.purchaseScrollView);
 
+
         ArrayList<Item> cart = new ArrayList<Item>();
         cart = manager.getCart();
         //TODO: test this
         for(int i = 0; i<cart.size(); i++){
-            TextView nameTextView = new TextView(this);
-            TextView priceTextView = new TextView(this);
-            LinearLayout layout = new LinearLayout(this);
-            nameTextView.setText(cart.get(i).getName());
-            priceTextView.setText(cart.get(i).getPrice());
-            int price = Integer.parseInt(cart.get(i).getPrice());
-            totalPrice = totalPrice + price; //This is the key line here. adds the current item's price to the total price
-            layout.setOrientation(LinearLayout.HORIZONTAL);
-            layout.addView(nameTextView);
-            layout.addView(priceTextView);
-            scrollView.addView(layout);
+            TextView textView = new TextView(this);
+            textView.setText(manager.getItem(i).getName()+"      $"+manager.getItem(i).getPrice());
+            scrollView.addView(textView);
         }
         TextView totalPriceTextView = new TextView(this);
-        totalPriceTextView.setText("GRAND TOTAL: "+totalPrice);
+        totalPriceTextView.setText("GRAND TOTAL: "+manager.getTotalCost());
 
         Intent intent = getIntent();
         myIndex = intent.getIntExtra("itemIndex", 0);
