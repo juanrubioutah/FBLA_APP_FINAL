@@ -6,15 +6,11 @@ package com.example.juanrubio.fbla_app_final;
 
 import android.content.Context;
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
-import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -47,7 +43,7 @@ public class CustomAdapter extends ArrayAdapter<Item> {
         productNameTextView.setText(product.getName());
         productPriceTextView.setText(product.getPrice());
         //productDeleteCheckBox.setChecked(product.isChecked);
-        productImageView.setImageResource(product.imageId);
+        productImageView.setImageBitmap(product.getImage());
 
         return convertView;
     }
