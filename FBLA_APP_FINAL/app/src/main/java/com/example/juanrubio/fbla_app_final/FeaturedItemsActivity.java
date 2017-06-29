@@ -2,6 +2,7 @@ package com.example.juanrubio.fbla_app_final;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -94,6 +95,7 @@ public class FeaturedItemsActivity extends AppCompatActivity
             cartLayout.removeView(purchaseButton);
             TextView textView = new TextView(getBaseContext());
             textView.setText("There are no items in your cart.");
+            textView.setTextColor(getResources().getColor(R.color.colorWhiteText));
             cartLayout.addView(textView);
         }
 
