@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.juanrubio.fbla_app_final.PurchaseActivity">
+    tools:context="com.example.juanrubio.fbla_app_final.PurchaseActivity"
+    android:animateLayoutChanges="true">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -12,23 +13,36 @@
         android:id="@+id/purchaseScrollView">
 
 
+
     </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btncircle"
             android:text="Cancel"
+            android:textColor="@color/colorWhiteText"
             android:onClick="cancel" />
 
         <Button
+            android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/btncircle"
+            android:onClick="pay"
+            android:padding="10dp"
             android:text="Proceed to Payment Details"
-            android:onClick="pay"/>
+            android:textColor="@color/colorWhiteText" />
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

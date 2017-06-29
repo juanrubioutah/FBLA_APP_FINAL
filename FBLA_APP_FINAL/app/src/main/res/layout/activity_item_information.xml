@@ -126,7 +126,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center_vertical"
+                android:gravity="fill_horizontal"
                 android:textSize="20sp"
                 android:textColor="@color/colorText"
                 android:id="@+id/itemDescriptionTextView"/>

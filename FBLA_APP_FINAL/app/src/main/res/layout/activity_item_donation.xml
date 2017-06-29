@@ -37,11 +37,13 @@
                 android:layout_height="match_parent"
                 android:text="Item Name:"
                 android:textColor="@color/colorTitleText"/>
+
             <EditText
+                android:id="@+id/ItemNameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="Item Name"
-                android:id="@+id/ItemNameEditText"/>
+                android:inputType="textCapWords" />
         </LinearLayout>
 
         <LinearLayout
@@ -75,11 +77,13 @@
                 android:layout_height="match_parent"
                 android:text="Item Condition:"
                 android:textColor="@color/colorTitleText"/>
+
             <EditText
+                android:id="@+id/ItemConditionEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="New/Good/Old"
-                android:id="@+id/ItemConditionEditText"/>
+                android:inputType="textCapWords" />
         </LinearLayout>
 
         <LinearLayout
@@ -93,11 +97,14 @@
                 android:layout_height="match_parent"
                 android:text="Item Description:"
                 android:textColor="@color/colorTitleText"/>
+
             <EditText
+                android:id="@+id/ItemDescriptionEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="start"
                 android:hint="Item Description"
-                android:id="@+id/ItemDescriptionEditText" />
+                android:inputType="textCapSentences" />
         </LinearLayout>
 
         <LinearLayout

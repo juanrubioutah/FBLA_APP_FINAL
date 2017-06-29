@@ -32,17 +32,18 @@
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:text="Name:"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:textColor="@color/colorTitleText"/>
 
             <EditText
+                android:id="@+id/purchaseCreditCardName"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/purchaseCreditCardName"
+                android:gravity="bottom"
                 android:hint="Full Name"
+                android:inputType="textCapWords"
                 android:textColor="@color/colorText"
-                android:textSize="18sp"
-                android:gravity="bottom"/>
+                android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -56,16 +57,17 @@
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:text="Card Info:"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:textColor="@color/colorTitleText"/>
 
             <EditText
+                android:id="@+id/purchaseCreditCardNumber"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/purchaseCreditCardNumber"
+                android:gravity="bottom"
                 android:hint="Credit Card Number"
-                android:textSize="18sp"
-                android:gravity="bottom"/>
+                android:inputType="number"
+                android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -78,16 +80,17 @@
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:text="Expiration Date:"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:textColor="@color/colorTitleText"/>
 
             <EditText
+                android:id="@+id/purchaseCreditCardExpiration"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/purchaseCreditCardExpiration"
-                android:textSize="18sp"
+                android:gravity="bottom"
                 android:hint="MM/YY"
-                android:gravity="bottom"/>
+                android:inputType="number"
+                android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -99,17 +102,18 @@
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:textColor="@color/colorTitleText"
                 android:text="CVV:"/>
 
             <EditText
+                android:id="@+id/purchaseCreditCardCVV"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/purchaseCreditCardCVV"
-                android:textSize="18sp"
+                android:gravity="bottom"
                 android:hint="***"
-                android:gravity="bottom"/>
+                android:inputType="number"
+                android:textSize="18sp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -120,18 +124,19 @@
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:textColor="@color/colorTitleText"
                 android:text="Address:"/>
 
             <EditText
+                android:id="@+id/purchaseStreetAddress"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/purchaseStreetAddress"
+                android:gravity="bottom"
                 android:hint="Street"
+                android:inputType="textCapWords"
                 android:maxLines="2"
-                android:textSize="18sp"
-                android:gravity="bottom"/>
+                android:textSize="18sp" />
 
         </LinearLayout>
 
@@ -143,17 +148,18 @@
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:textColor="@color/colorTitleText"
                 android:text="City:"/>
 
             <EditText
+                android:id="@+id/purchaseCityState"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/purchaseCityState"
+                android:gravity="bottom"
                 android:hint="City, State"
-                android:textSize="18sp"
-                android:gravity="bottom"/>
+                android:inputType="textCapWords"
+                android:textSize="18sp" />
         </LinearLayout>
 
 
