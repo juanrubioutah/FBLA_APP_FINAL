@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -54,51 +55,66 @@ public class FeaturedItemsActivity extends AppCompatActivity
 
 
         String[] cartItemNames = cartManager.getItemNames();
-        ArrayAdapter<String> cartAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, cartItemNames);
-        cartListView.setAdapter(cartAdapter);
-        cartListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-                TextView textView = (TextView)view;
-                String itemName = textView.getText().toString();
-                final int itemIndex = cartManager.getIndex(itemName);
-                CharSequence options[] = new CharSequence[] {"Remove", "Cancel"};
+        try{
+            String name = cartItemNames[0];
+            ArrayAdapter<String> cartAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, cartItemNames);
+            cartListView.setAdapter(cartAdapter);
+            cartListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    TextView textView = (TextView) view;
+                    String itemName = textView.getText().toString();
+                    final int itemIndex = cartManager.getIndex(itemName);
+                    CharSequence options[] = new CharSequence[]{"Remove", "Cancel"};
 
 
-                //TODO: fix the alertDialog
-                AlertDialog.Builder builder = new AlertDialog.Builder(getBaseContext());
-                builder.setTitle("Would you like to remove "+itemName+" from your cart?");
-                builder.setItems(options, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        if(which==0){
-                            cartManager.removeItem(itemIndex);
-                            dialog.dismiss();
+                    //TODO: fix the alertDialog
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getBaseContext());
+                    builder.setTitle("Would you like to remove " + itemName + " from your cart?");
+                    builder.setItems(options, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            if (which == 0) {
+                                cartManager.removeItem(itemIndex);
+                                dialog.dismiss();
+                            } else if (which == 1) {
+                                dialog.dismiss();
+                            }
                         }
-                        else if(which==1){
-                            dialog.dismiss();
-                        }
-                    }
-                });
-                builder.show();
-            }
-        });
+                    });
+                    builder.show();
+                }
+            });
+        }catch(ArrayIndexOutOfBoundsException e){
+            cartLayout.removeView(cartListView);
+            TextView textView = new TextView(getBaseContext());
+            textView.setText("There are no items in your cart.");
+            cartLayout.addView(textView);
+        }
 
-
+        ConstraintLayout featuredItemsLayout = (ConstraintLayout)findViewById(R.id.featuredItemsLayout);
         ListView featuredItemsListView = (ListView)findViewById(R.id.featuredItemsListView);
         String[] featuredItemNames = itemManager.getAllItemNames();
-        ArrayAdapter<String> featuredAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, featuredItemNames);
-        featuredItemsListView.setAdapter(featuredAdapter);
-        featuredItemsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView textView = (TextView)view;
-                String itemName = textView.getText().toString();
-                final int itemIndex = itemManager.getIndex(itemName);
-                Intent intent = new Intent(getBaseContext(), ItemInformationActivity.class);
-                intent.putExtra("ITEM_INDEX", String.valueOf(itemIndex));
-                startActivity(intent);
-            }
-        });
+        try{
+            String name = featuredItemNames[0]; //This throws an ArrayIndexOutOfBoundsException if there are no names
+            ArrayAdapter<String> featuredAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, featuredItemNames);
+            featuredItemsListView.setAdapter(featuredAdapter);
+            featuredItemsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    TextView textView = (TextView) view;
+                    String itemName = textView.getText().toString();
+                    final int itemIndex = itemManager.getIndex(itemName);
+                    Intent intent = new Intent(getBaseContext(), ItemInformationActivity.class);
+                    intent.putExtra("ITEM_INDEX", String.valueOf(itemIndex));
+                    startActivity(intent);
+                }
+            });
+        }catch(ArrayIndexOutOfBoundsException e){
+            featuredItemsLayout.removeAllViews();
+            TextView textView = new TextView(getBaseContext());
+            textView.setText("There are currently no featured items.");
+            featuredItemsLayout.addView(textView);
+        }
     }
 
     @Override

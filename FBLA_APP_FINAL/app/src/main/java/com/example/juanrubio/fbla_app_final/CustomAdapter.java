@@ -5,8 +5,10 @@ package com.example.juanrubio.fbla_app_final;
  */
 
 import android.content.Context;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,12 +20,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-
-public class CustomAdapter extends ArrayAdapter<Product> {
+@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+public class CustomAdapter extends ArrayAdapter<Item> {
      Context context;
      int resource;
-     ArrayList<Product> products = null;
-     public CustomAdapter(Context context, int resource, ArrayList<Product> products) {
+     ArrayList<Item> products = null;
+     public CustomAdapter(Context context, int resource, ArrayList<Item> products) {
          super(context, resource, products);
          this.context = context;
          this.resource = resource;
@@ -33,7 +35,7 @@ public class CustomAdapter extends ArrayAdapter<Product> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Product product = products.get(position);
+        Item product = products.get(position);
         if(convertView==null)
             convertView = LayoutInflater.from(context).inflate(R.layout.single_row, parent, false);
 
@@ -42,8 +44,8 @@ public class CustomAdapter extends ArrayAdapter<Product> {
         //CheckBox productDeleteCheckBox = (CheckBox)convertView.findViewById(R.id.check_delete);
         ImageView productImageView = (ImageView)convertView.findViewById(R.id.item_image);
 
-        productNameTextView.setText(product.name);
-        productPriceTextView.setText(product.price);
+        productNameTextView.setText(product.getName());
+        productPriceTextView.setText(product.getPrice());
         //productDeleteCheckBox.setChecked(product.isChecked);
         productImageView.setImageResource(product.imageId);
 
