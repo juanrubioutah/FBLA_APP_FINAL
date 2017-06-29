@@ -19,6 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".IntroductionActivity"/>
         <activity android:name=".ItemInformationActivity" />
         <activity android:name=".PaymentDetailsActivity" />
         <activity android:name=".MainMenuActivity" />
@@ -28,12 +29,7 @@
             android:name=".ConfirmDonationActivity"
             android:label="@string/title_activity_confirm_donation"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".CartActivity" />
         <activity android:name=".CommentActivity" />
-        <activity
-            android:name=".HomeScreenActivity"
-            android:label="@string/title_activity_home_screen"
-            android:theme="@style/AppTheme" />
         <activity
             android:name=".FeaturedItemsActivity"
             android:label="@string/title_activity_featured_items"
