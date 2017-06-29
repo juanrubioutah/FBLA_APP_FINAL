@@ -55,13 +55,8 @@ public class FeaturedItemsActivity extends AppCompatActivity
 
 
         String[] cartItemNames = cartManager.getItemNames();
-        if(cartItemNames[0].equals("")){
-            cartLayout.removeView(cartListView);
-            TextView textView = new TextView(getBaseContext());
-            textView.setText("There are no items in your cart.");
-            cartLayout.addView(textView);
-        }
-        else {
+        try{
+            String name = cartItemNames[0];
             ArrayAdapter<String> cartAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, cartItemNames);
             cartListView.setAdapter(cartAdapter);
             cartListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -89,17 +84,18 @@ public class FeaturedItemsActivity extends AppCompatActivity
                     builder.show();
                 }
             });
+        }catch(ArrayIndexOutOfBoundsException e){
+            cartLayout.removeView(cartListView);
+            TextView textView = new TextView(getBaseContext());
+            textView.setText("There are no items in your cart.");
+            cartLayout.addView(textView);
         }
+
         ConstraintLayout featuredItemsLayout = (ConstraintLayout)findViewById(R.id.featuredItemsLayout);
         ListView featuredItemsListView = (ListView)findViewById(R.id.featuredItemsListView);
         String[] featuredItemNames = itemManager.getAllItemNames();
-        if(featuredItemNames[0].equals("")){
-            featuredItemsLayout.removeAllViews();
-            TextView textView = new TextView(getBaseContext());
-            textView.setText("There are currently no featured items.");
-            featuredItemsLayout.addView(textView);
-        }
-        else {
+        try{
+            String name = featuredItemNames[0]; //This throws an ArrayIndexOutOfBoundsException if there are no names
             ArrayAdapter<String> featuredAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, featuredItemNames);
             featuredItemsListView.setAdapter(featuredAdapter);
             featuredItemsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -113,6 +109,11 @@ public class FeaturedItemsActivity extends AppCompatActivity
                     startActivity(intent);
                 }
             });
+        }catch(ArrayIndexOutOfBoundsException e){
+            featuredItemsLayout.removeAllViews();
+            TextView textView = new TextView(getBaseContext());
+            textView.setText("There are currently no featured items.");
+            featuredItemsLayout.addView(textView);
         }
     }
 

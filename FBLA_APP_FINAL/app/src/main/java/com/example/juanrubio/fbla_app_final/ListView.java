@@ -19,11 +19,11 @@ public class ListView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view);
 
-        ///ListView listView = (ListView)findViewById(R.id.list_view);
+        //ListView listView = (ListView)findViewById(R.id.list_view);
 
         android.widget.ListView listView = (android.widget.ListView)findViewById(R.id.list_view);
 
-        ArrayList<Product> products = new ArrayList<Product>();
+        ArrayList<Item> products = new ArrayList<Item>();
 
 
         //somehow get all the array info here
