@@ -34,7 +34,7 @@ public class ListView extends AppCompatActivity {
 
         android.widget.ListView listView = (android.widget.ListView)findViewById(R.id.list_view);
 
-        ArrayList<Product> products = new ArrayList<Product>();
+        ArrayList<Item> products = new ArrayList<Item>();
 
 
 
