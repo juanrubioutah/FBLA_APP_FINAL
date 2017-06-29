@@ -51,13 +51,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Clear Cart"
-                    android:onClick="clear"/>
+                    android:onClick="clear"
+                    android:id="@+id/cartClearButton"/>
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Purchase"
-                    android:onClick="completePurchase"/>
+                    android:onClick="completePurchase"
+                    android:id="@+id/cartPurchaseButton"/>
             </LinearLayout>
 
         </LinearLayout>

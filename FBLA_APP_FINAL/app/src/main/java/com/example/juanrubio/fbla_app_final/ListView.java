@@ -27,7 +27,7 @@ public class ListView extends AppCompatActivity {
 
         Resources res = getResources();
 
-        titles = res.getStringArray(R.array.itemArray);
+        titles = res.getStringArray(R.array.itemName);
         prices = res.getStringArray(R.array.priceArray);
 
         //list = (ListView)findViewById(R.id.list_view);

@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="Please Complete All Fields"
-            android:id="@+id/purchaseIncompleteTextView"
+            android:id="@+id/incompleteTextView"
             android:visibility="invisible"/>
 
         <LinearLayout

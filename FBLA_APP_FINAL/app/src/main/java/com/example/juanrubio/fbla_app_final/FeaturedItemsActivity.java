@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -86,6 +87,10 @@ public class FeaturedItemsActivity extends AppCompatActivity
             });
         }catch(ArrayIndexOutOfBoundsException e){
             cartLayout.removeView(cartListView);
+            Button clearButton = (Button)findViewById(R.id.cartClearButton);
+            Button purchaseButton = (Button)findViewById(R.id.cartPurchaseButton);
+            cartLayout.removeView(clearButton);
+            cartLayout.removeView(purchaseButton);
             TextView textView = new TextView(getBaseContext());
             textView.setText("There are no items in your cart.");
             cartLayout.addView(textView);

@@ -9,7 +9,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="search">Search</string>
 
-    <string-array name="itemArray">
+    <string-array name="itemName">
         <item>Chair</item>
         <item>Coach bag</item>
         <item>Keyboard</item>

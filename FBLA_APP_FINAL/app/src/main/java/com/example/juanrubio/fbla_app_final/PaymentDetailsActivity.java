@@ -76,8 +76,7 @@ public class PaymentDetailsActivity extends AppCompatActivity {
         return;
     }
     public void cancel(View view){
-        Intent intent = new Intent(this, ItemInformationActivity.class);
-        intent.putExtra("itemIndex", myIndex);
+        Intent intent = new Intent(this, FeaturedItemsActivity.class);
         startActivity(intent);
     }
 }
