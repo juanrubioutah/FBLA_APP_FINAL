@@ -4,7 +4,7 @@ package com.example.juanrubio.fbla_app_final;
  * Created by YaFeng Xiong on 6/27/2017.
  */
 
-public class Product {
+public class Product { //TODO: the product class is unnecessary...this should be in the Item class
     public String name;
     public String price;
     public int imageId;

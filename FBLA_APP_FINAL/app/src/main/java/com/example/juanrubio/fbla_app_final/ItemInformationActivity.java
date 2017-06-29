@@ -8,6 +8,7 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -30,6 +31,7 @@ public class ItemInformationActivity extends AppCompatActivity {
     TextView descriptionTextView;
 
     LinearLayout itemInformationLayout;
+    LinearLayout itemImageLinearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,7 @@ public class ItemInformationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_item_information);
 
         itemInformationLayout = (LinearLayout)findViewById(R.id.itemInformationLayout);
+        itemImageLinearLayout = (LinearLayout)findViewById(R.id.itemImageLinearLayout);
 
         titleTextView = (TextView)findViewById(R.id.itemNameTextView);
         imageView = (ImageView)findViewById(R.id.itemImageImageView);
@@ -56,7 +59,16 @@ public class ItemInformationActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         try {
-            imageView.setImageBitmap(myItem.getImage());
+            if(myItem.getImage()==null){ //If there's no image, remove the blue background and display text telling the user
+                itemImageLinearLayout.removeView(imageView);
+                TextView textView = new TextView(getBaseContext());
+                textView.setText("No Image");
+                itemImageLinearLayout.setGravity(Gravity.CENTER);
+                itemImageLinearLayout.addView(textView);
+            }
+            else {
+                imageView.setImageBitmap(myItem.getImage());
+            }
         }catch(Exception e){
             e.printStackTrace();
         }
