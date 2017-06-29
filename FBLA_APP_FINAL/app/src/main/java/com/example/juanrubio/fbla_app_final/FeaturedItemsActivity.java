@@ -71,7 +71,7 @@ public class FeaturedItemsActivity extends AppCompatActivity
 
 
                     //TODO: fix the alertDialog
-                    AlertDialog.Builder builder = new AlertDialog.Builder(getBaseContext());
+                    AlertDialog.Builder builder = new AlertDialog.Builder(FeaturedItemsActivity.this);
                     builder.setTitle("Would you like to remove " + itemName + " from your cart?");
                     builder.setItems(options, new DialogInterface.OnClickListener() {
                         @Override
@@ -79,6 +79,9 @@ public class FeaturedItemsActivity extends AppCompatActivity
                             if (which == 0) {
                                 cartManager.removeItem(itemIndex);
                                 dialog.dismiss();
+                                Intent intent = getIntent();
+                                finish();
+                                startActivity(intent);
                             } else if (which == 1) {
                                 dialog.dismiss();
                             }
@@ -155,7 +158,7 @@ public class FeaturedItemsActivity extends AppCompatActivity
         }
         //I tried, but I didn't know what the name of the next activity was
         if (id == R.id.action_search){
-            Intent intent = new Intent(this, SearchActivity.class);
+            Intent intent = new Intent(this, SearchBar.class);
             startActivity(intent);
             return true;
         }

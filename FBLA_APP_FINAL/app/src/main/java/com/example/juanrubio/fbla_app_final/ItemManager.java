@@ -110,4 +110,12 @@ public class ItemManager{
         }
         return itemNames;
     }
+    public int getItemId(String itemName){
+        for(int i = 0; i<items.size(); i++){
+            if(items.get(i).getName().equals(itemName)){
+                return i;
+            }
+        }
+        return -1;
+    }
 }

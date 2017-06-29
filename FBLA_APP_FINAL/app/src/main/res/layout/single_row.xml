@@ -47,16 +47,6 @@
                 android:textSize="18sp"
                 android:layout_centerVertical="true"/>
 
-            <CheckBox
-                android:id="@+id/check_delete"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Delete"
-                android:textColor="#ea2b2b"
-                android:buttonTint="#ea2b2b"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:visibility="invisible"/>
 
 
         </RelativeLayout>

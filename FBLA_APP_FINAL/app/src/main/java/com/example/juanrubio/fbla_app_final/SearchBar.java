@@ -1,5 +1,6 @@
 package com.example.juanrubio.fbla_app_final;
 
+import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
@@ -10,8 +11,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,6 +27,8 @@ public class SearchBar extends AppCompatActivity {
     CustomAdapter adapter;
 
     ItemManager manager = MainActivity.getGlobalItemManager();
+
+    TextView itemName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +47,13 @@ public class SearchBar extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                itemName = (TextView)findViewById(R.id.item_name);
+                String name = itemName.getText().toString();
+                int itemId = manager.getItemId(name);
+                String myItem = Integer.toString(itemId);
+                Intent intent = new Intent(SearchBar.this, ItemInformationActivity.class);
+                intent.putExtra("ITEM_INDEX", myItem);
+                startActivity(intent);
             }
         });
     }
