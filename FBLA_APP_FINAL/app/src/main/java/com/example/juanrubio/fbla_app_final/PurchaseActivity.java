@@ -23,6 +23,7 @@ public class PurchaseActivity extends AppCompatActivity {
     CartManager manager = MainActivity.getGlobalCartManager();
     int myIndex;
 
+    TextView totalPriceTextView;
 
     public int totalPrice;
 
@@ -43,8 +44,8 @@ public class PurchaseActivity extends AppCompatActivity {
             textView.setText(manager.getItem(i).getName()+"      $"+manager.getItem(i).getPrice());
             scrollView.addView(textView);
         }
-        TextView totalPriceTextView = new TextView(this);
-        totalPriceTextView.setText("GRAND TOTAL: "+manager.getTotalCost());
+        totalPriceTextView = (TextView)findViewById(R.id.totalPriceTextView);
+        totalPriceTextView.setText("Grand Total: $"+manager.getTotalCost());
 
         Intent intent = getIntent();
         myIndex = intent.getIntExtra("itemIndex", 0);

@@ -25,6 +25,8 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
 public class FeaturedItemsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -34,6 +36,8 @@ public class FeaturedItemsActivity extends AppCompatActivity
 
     LinearLayout cartLayout;
     LinearLayout featuredItemsLayout;
+
+    TextView itemName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +76,7 @@ public class FeaturedItemsActivity extends AppCompatActivity
 
                     //TODO: fix the alertDialog
                     AlertDialog.Builder builder = new AlertDialog.Builder(FeaturedItemsActivity.this);
-                    builder.setTitle("Would you like to remove " + itemName + " from your cart?");
+                    builder.setTitle("Would you like to remove \'" + itemName + "\' from your cart?");
                     builder.setItems(options, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -105,18 +109,20 @@ public class FeaturedItemsActivity extends AppCompatActivity
         ConstraintLayout featuredItemsLayout = (ConstraintLayout)findViewById(R.id.featuredItemsLayout);
         ListView featuredItemsListView = (ListView)findViewById(R.id.featuredItemsListView);
         String[] featuredItemNames = itemManager.getAllItemNames();
+        ArrayList<Item> allItems = itemManager.getAllItems();
         try{
             String name = featuredItemNames[0]; //This throws an ArrayIndexOutOfBoundsException if there are no names
-            ArrayAdapter<String> featuredAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, featuredItemNames);
-            featuredItemsListView.setAdapter(featuredAdapter);
+            CustomAdapter adapter = new CustomAdapter(FeaturedItemsActivity.this, R.layout.single_row, allItems);
+            featuredItemsListView.setAdapter(adapter);
             featuredItemsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    TextView textView = (TextView) view;
-                    String itemName = textView.getText().toString();
-                    final int itemIndex = itemManager.getIndex(itemName);
-                    Intent intent = new Intent(getBaseContext(), ItemInformationActivity.class);
-                    intent.putExtra("ITEM_INDEX", String.valueOf(itemIndex));
+                    itemName = (TextView)findViewById(R.id.item_name);
+                    String name = itemName.getText().toString();
+                    int itemId = itemManager.getItemId(name);
+                    String myItem = Integer.toString(itemId);
+                    Intent intent = new Intent(FeaturedItemsActivity.this, ItemInformationActivity.class);
+                    intent.putExtra("ITEM_INDEX", myItem);
                     startActivity(intent);
                 }
             });

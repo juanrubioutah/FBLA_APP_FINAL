@@ -58,6 +58,9 @@ public class CartManager {
         this.totalCost = totalCost;
     }
     public int getTotalCost(){
+        for(int i = 0; i<cart.size(); i++){
+            totalCost = totalCost+(Integer.parseInt(cart.get(i).getPrice()));
+        }
         return totalCost;
     }
 
